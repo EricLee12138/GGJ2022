@@ -4,27 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class GameDatas : IEnumerable<GameDatas>
+[System.Serializable]
+public class GameDatas
 {
     public string radioText;
     public string letterText;
-    private List<GameDatas> data;
+}
 
-    public GameDatas this[int i]
-    {
-        get { return data[i]; }
-        set { data[i] = value; }
-    }
-
-    public IEnumerator<GameDatas> GetEnumerator()
-    {
-        return data.GetEnumerator();
-    }
-
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
-    }
+[System.Serializable]
+public class datalist
+{
+    public GameDatas[] GameData = {};
 }
 
 public class GameFlagManager : MonoBehaviour
@@ -42,11 +32,10 @@ public class GameFlagManager : MonoBehaviour
         jsonString = File.ReadAllText (path); 
         Debug.Log("Game data path :" + path);
 
-        GameDatas gameDatas = JsonUtility.FromJson<GameDatas> (jsonString);
-        foreach (GameDatas gameData in gameDatas)
-        {
-            Debug.Log("Start parse");
-            Debug.Log("radio: " + gameData.radioText + "letter: " + gameData.letterText);
+        datalist gameDatas = JsonUtility.FromJson<datalist> (jsonString);
+        print(gameDatas.GameData.Length);
+        foreach(GameDatas data in gameDatas.GameData) {
+            print(data.radioText);
         }
     }
 
