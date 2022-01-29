@@ -50,9 +50,9 @@ public class StoryManager : MonoBehaviour
 
     public void StartToday()
     {
+        cameraMovement.EnableMovement();
         NewspaperMask.GetComponent<Animator>().SetTrigger("FadeOut");
         NewspaperBg.GetComponent<Animator>().SetTrigger("FadeOut");
-
         NewspaperClip.GetComponent<Animator>().SetTrigger("FadeOut");
     }
 
