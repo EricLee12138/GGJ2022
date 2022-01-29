@@ -2,9 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CameraMovement))]
 public class StoryManager : MonoBehaviour
 {
-    public int DaySurvived = 0;
+    [SerializeField]
+    GameObject NewspaperMask;
+    [SerializeField]
+    GameObject NewspaperBg;
+    [SerializeField]    
+    GameObject NewspaperClip;
+
+    public int DayPassed = 0;
 
     public int EvilPoint = 0;
     public int KindPoint = 100;
@@ -16,6 +24,13 @@ public class StoryManager : MonoBehaviour
     public string ChoiceA = "A";
     public string ChoiceB = "B";
 
+    CameraMovement cameraMovement;
+    
+    void Start()
+    {
+        cameraMovement = GetComponent<CameraMovement>();
+    }
+
     public void EndToday()
     {
         if (SpeicalEventHappened && !SpeicalEventDone) // Special event not done, can't end today
@@ -25,7 +40,20 @@ public class StoryManager : MonoBehaviour
         }
 
         // End today
+        cameraMovement.DisableMovement();
+        DayPassed++;
+        NewspaperMask.SetActive(true);
+        NewspaperMask.GetComponent<Animator>().SetTrigger("FadeIn");
+        NewspaperBg.GetComponent<Animator>().SetTrigger("FadeIn");
+        NewspaperClip.GetComponent<Animator>().SetTrigger("FadeIn");
+    }
 
+    public void StartToday()
+    {
+        NewspaperMask.GetComponent<Animator>().SetTrigger("FadeOut");
+        NewspaperBg.GetComponent<Animator>().SetTrigger("FadeOut");
+
+        NewspaperClip.GetComponent<Animator>().SetTrigger("FadeOut");
     }
 
     void DeclineEndToday()

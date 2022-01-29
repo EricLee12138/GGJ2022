@@ -10,7 +10,13 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]
     Bounds cameraBounds;
 
-    float k = .25f;
+    [SerializeField]
+    Vector2 triggerDistance;
+
+    bool disabled = false;
+    float k = .15f;
+    float speed = 2f;
+    Vector3 targetPosition;
 
     void Start()
     {
@@ -18,6 +24,7 @@ public class CameraMovement : MonoBehaviour
         {
             mainCamera = Camera.main;
         }
+        targetPosition = mainCamera.transform.position;
     }
 
     void OnDrawGizmosSelected()
@@ -28,36 +35,34 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
-        Vector3 cameraPosition = mainCamera.transform.position;
-        Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D hit;
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
-        if (hit) {
-            print("hit");
-            Vector3 targetPosition = hit.point;
-            targetPosition = targetPosition * k + cameraPosition * (1-k);
-            targetPosition.x = Mathf.Clamp(targetPosition.x , cameraBounds.min.x, cameraBounds.max.x);
-            targetPosition.y = Mathf.Clamp(targetPosition.y , cameraBounds.min.y, cameraBounds.max.y);
-            targetPosition.z = mainCamera.transform.position.z;
+        if (!disabled) {
+            Vector3 cameraPosition = mainCamera.transform.position;
+            Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
-            float distance = Vector3.Distance(cameraPosition, targetPosition);
-            mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, targetPosition, 5f * distance * Time.deltaTime);
+            if (Mathf.Abs(mousePosition.x - cameraPosition.x) > triggerDistance.x ||
+            Mathf.Abs(mousePosition.y - cameraPosition.y) > triggerDistance.y) {
+                RaycastHit2D hit;
+                Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+                hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
+                if (hit) {
+                    targetPosition = hit.point;
+                    targetPosition = targetPosition * k + cameraPosition * (1-k);
+                    targetPosition.x = Mathf.Clamp(targetPosition.x , cameraBounds.min.x, cameraBounds.max.x);
+                    targetPosition.y = Mathf.Clamp(targetPosition.y , cameraBounds.min.y, cameraBounds.max.y);
+                    targetPosition.z = mainCamera.transform.position.z;
+                }
+            }
         }
-
+        
+        float distance = Vector3.Distance(mainCamera.transform.position, targetPosition);
+        mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, targetPosition, speed * distance * Time.deltaTime);
     }
 
-    void OnMouseOver()
+    public void DisableMovement()
     {
-        // Vector3 cameraPosition = mainCamera.transform.position;
-        // Vector3 targetPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        // targetPosition = targetPosition * k + cameraPosition * (1-k);
-        // targetPosition.x = Mathf.Clamp(targetPosition.x , cameraBounds.min.x, cameraBounds.max.x);
-        // targetPosition.y = Mathf.Clamp(targetPosition.y , cameraBounds.min.y, cameraBounds.max.y);
-        // targetPosition.z = mainCamera.transform.position.z;
-        // Debug.DrawLine(Vector3.zero, targetPosition);
-
-        // float distance = Vector3.Distance(cameraPosition, targetPosition);
-        // mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, targetPosition, 5f * distance * Time.deltaTime);
+        disabled = true;
+        targetPosition.x = 0;
+        targetPosition.y = 0;
+        targetPosition.z = mainCamera.transform.position.z;
     }
 }
