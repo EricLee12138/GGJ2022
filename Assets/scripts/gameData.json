@@ -1,83 +1,84 @@
-{
-  "1":{
+  {"GameData": [
+    {
+    "radioText": "/0",
+    "letterText": "Good Bye",
+    "specialEvent": "isCornSteal",
+    "yes": "(1,2)",
+    "no": "(0,1)",
+    "conditionSpecialEvent": "",
+    "conditionRadio": ""
+  },
+  {
+  "radioText": "Great News",
+  "letterText": "/0",
+  "specialEvent": "isNeighborSteal",
+  "yes": "(1,1)",
+  "no": "(0,0)",
+  "conditionSpecialEvent": "",
+  "conditionRadio": ""
+  },
+  {
+  "radioText": "Gaaaaaah",
+  "letterText": "Dear Mom, Thank you",
+  "specialEvent": "isHelpNeighbor",
+  "yes": "(-1,0)",
+  "no": "(1,1)",
+  "conditionSpecialEvent": "isStealNeighbor\" = FALSE",
+  "conditionRadio": ""
+  },
+ {
   "radioText": "/0",
-  "letterText": "Good Bye",
-  "specialEvent": "isCornSteal",
+  "letterText": "Dear Mom, I'll be back soon!",
+  "specialEvent": "isHelpHobo",
+  "yes": "(-1,0)",
+  "no": "(1,1)",
+  "conditionSpecialEvent": "",
+  "conditionRadio": ""
+  },
+{
+  "radioText": "/0",
+  "letterText": "Dear Mom, This is the last day",
+  "specialEvent": "ishospitalSteal",
   "yes": "(1,2)",
   "no": "(0,1)",
   "conditionSpecialEvent": "",
   "conditionRadio": ""
-},
-"2": {
-"radioText": "Great News",
-"letterText": "/0",
-"specialEvent": "isNeighborSteal",
-"yes": "(1,1)",
-"no": "(0,0)",
-"conditionSpecialEvent": "",
-"conditionRadio": ""
-},
-"3": {
-"radioText": "Gaaaaaah",
-"letterText": "Dear Mom, Thank you",
-"specialEvent": "isHelpNeighbor",
-"yes": "(-1,0)",
-"no": "(1,1)",
-"conditionSpecialEvent": "isStealNeighbor\" = FALSE",
-"conditionRadio": ""
-},
-"4": {
-"radioText": "/0",
-"letterText": "Dear Mom, I'll be back soon!",
-"specialEvent": "isHelpHobo",
-"yes": "(-1,0)",
-"no": "(1,1)",
-"conditionSpecialEvent": "",
-"conditionRadio": ""
-},
-"5": {
-"radioText": "/0",
-"letterText": "Dear Mom, This is the last day",
-"specialEvent": "ishospitalSteal",
-"yes": "(1,2)",
-"no": "(0,1)",
-"conditionSpecialEvent": "",
-"conditionRadio": ""
-},
-"6": {
-"radioText": "Great News",
-"letterText": "/0",
-"specialEvent": "isHelpColdKid",
-"yes": "(-1,0)",
-"no": "(0,0)",
-"conditionSpecialEvent": "isHelpHobo\" = TRUE",
-"conditionRadio": ""
-},
-"7": {
-"radioText": "Kid die on street",
-"letterText": "/0",
-"specialEvent": "isBoots",
-"yes": "(1,1)",
-"no": "(0,0)",
-"conditionSpecialEvent": "",
-"conditionRadio": "isHelpColdKid\" = FALSE"
-},
-"8": {
-"radioText": "Police looking for possible thief",
-"letterText": "/0",
-"specialEvent": "isCannedFood",
-"yes": "(1,1)",
-"no": "(0,0)",
-"conditionSpecialEvent": "",
-"conditionRadio": "isCornSteal\" = TRUE || \"isNeighborSteal\" = TRUE"
-},
-"9": {
-"radioText": "/0",
-"letterText": "Dear Mom, Thank you",
-"specialEvent": "isBook",
-"yes": "(1,1)",
-"no": "(0,0)",
-"conditionSpecialEvent": "",
-"conditionRadio": ""
-}
+  },
+  {
+  "radioText": "Great News",
+  "letterText": "/0",
+  "specialEvent": "isHelpColdKid",
+  "yes": "(-1,0)",
+  "no": "(0,0)",
+  "conditionSpecialEvent": "isHelpHobo\" = TRUE",
+  "conditionRadio": ""
+  },
+  {
+  "radioText": "Kid die on street",
+  "letterText": "/0",
+  "specialEvent": "isBoots",
+  "yes": "(1,1)",
+  "no": "(0,0)",
+  "conditionSpecialEvent": "",
+  "conditionRadio": "isHelpColdKid\" = FALSE"
+  },
+  {
+  "radioText": "Police looking for possible thief",
+  "letterText": "/0",
+  "specialEvent": "isCannedFood",
+  "yes": "(1,1)",
+  "no": "(0,0)",
+  "conditionSpecialEvent": "",
+  "conditionRadio": "isCornSteal\" = TRUE || \"isNeighborSteal\" = TRUE"
+  },
+  {
+  "radioText": "/0",
+  "letterText": "Dear Mom, Thank you",
+  "specialEvent": "isBook",
+  "yes": "(1,1)",
+  "no": "(0,0)",
+  "conditionSpecialEvent": "",
+  "conditionRadio": ""
+  }
+]
 }

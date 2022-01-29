@@ -1,21 +1,53 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+
+public class GameDatas : IEnumerable<GameDatas>
+{
+    public string radioText;
+    public string letterText;
+    private List<GameDatas> data;
+
+    public GameDatas this[int i]
+    {
+        get { return data[i]; }
+        set { data[i] = value; }
+    }
+
+    public IEnumerator<GameDatas> GetEnumerator()
+    {
+        return data.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+}
 
 public class GameFlagManager : MonoBehaviour
 {
-    private void Awake()
+    private void Start()
     {
-        readGameData();
+        readGameData(0);
     }
 
-    private void readGameData (int day = 0){
+    private void readGameData (int day){
         //read and parse json data according to date(as row)
         string path;
-        
-        JsonUtility.FromJsonOverwrite(json, this);
-        Debug.Log(json);
+        string jsonString;
+        path = Application.dataPath + "/scripts/gameData.json";
+        jsonString = File.ReadAllText (path); 
+        Debug.Log("Game data path :" + path);
+
+        GameDatas gameDatas = JsonUtility.FromJson<GameDatas> (jsonString);
+        foreach (GameDatas gameData in gameDatas)
+        {
+            Debug.Log("Start parse");
+            Debug.Log("radio: " + gameData.radioText + "letter: " + gameData.letterText);
+        }
     }
 
 
@@ -34,7 +66,6 @@ public class GameFlagManager : MonoBehaviour
     }
     
     //init
-    public string json;
     public int day;//Player needs to make decision to pass a day
     public int evilPoint;
     public int sonPoint;
