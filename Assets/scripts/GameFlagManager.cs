@@ -37,6 +37,8 @@ public class GameFlagManager : MonoBehaviour
         foreach(GameDatas data in gameDatas.GameData) {
             print(data.radioText);
         }
+
+        
     }
 
 
