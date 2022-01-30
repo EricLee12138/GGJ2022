@@ -39,6 +39,8 @@ public class StoryManager : MonoBehaviour
     GameObject EnvelopeB;
     [SerializeField]
     GameObject EnvelopeOpen;
+    [SerializeField]
+    GameObject Package;
 
     [SerializeField]
     GameObject EndingObj;
@@ -138,6 +140,7 @@ public class StoryManager : MonoBehaviour
         EnvelopeA.gameObject.SetActive(false);
         EnvelopeB.gameObject.SetActive(false);
         EnvelopeOpen.gameObject.SetActive(false);
+        Package.SetActive(false);
         Letter.SetActive(false);
         LetterTextHolder.gameObject.SetActive(false);
         ShowNothingHelp();
@@ -165,27 +168,33 @@ public class StoryManager : MonoBehaviour
         Decision = gameFlagManager.gameText;
 
         DateHolder.text = (7 + DayPassed).ToString();
-        MemoTextHolder.text = Decision;
+        MemoTextHolder.text = EventText;
         LetterTextHolder.text = LetterText;
         ChoiceATextHolder.text = ChoiceA;
         ChoiceBTextHolder.text = ChoiceB;
         RadioTextHolder.text =  RadioText;
 
-        if (DecisionSource == "letter")
+        if (LetterText.Length > 0)
         {
             EnvelopeA.gameObject.SetActive(true);
             EnvelopeB.gameObject.SetActive(true);
-            MemoTextHolder.gameObject.SetActive(false);
+        }
+
+        if (EventText.Length > 0)
+        {
+            MemoTextHolder.gameObject.SetActive(true);
+        }
+
+        if (DecisionSource == "letter")
+        {
             ChoiceATextHolder.gameObject.SetActive(false);
             ChoiceBTextHolder.gameObject.SetActive(false);
         } else if(DecisionSource == "radio")
         {
-            MemoTextHolder.gameObject.SetActive(false);
             ChoiceATextHolder.gameObject.SetActive(false);
             ChoiceBTextHolder.gameObject.SetActive(false);
         } else if (DecisionSource == "special")
         {
-            MemoTextHolder.gameObject.SetActive(true);
             ChoiceATextHolder.gameObject.SetActive(true);
             ChoiceBTextHolder.gameObject.SetActive(true);
         } else {
@@ -230,6 +239,9 @@ public class StoryManager : MonoBehaviour
             MemoTextHolder.gameObject.SetActive(true);
             ChoiceATextHolder.gameObject.SetActive(true);
             ChoiceBTextHolder.gameObject.SetActive(true);
+
+            // Append to memo
+            MemoTextHolder.text +=  '\n' + Decision;
         }
 
         StartCoroutine(WaitUntilAnimationIsName(RadioTextBg, "Idle"));
@@ -249,6 +261,9 @@ public class StoryManager : MonoBehaviour
             MemoTextHolder.gameObject.SetActive(true);
             ChoiceATextHolder.gameObject.SetActive(true);
             ChoiceBTextHolder.gameObject.SetActive(true);
+            
+            // Append to memo
+            MemoTextHolder.text +=  '\n' + Decision;
         }
     }
 
@@ -256,6 +271,7 @@ public class StoryManager : MonoBehaviour
         if (yes)
         {
             Decision += '\n' + ChoiceA;
+            Package.SetActive(true);
         } else
         {
             Decision += '\n' + ChoiceB;
@@ -264,6 +280,7 @@ public class StoryManager : MonoBehaviour
         ChoiceATextHolder.gameObject.SetActive(false);
         ChoiceBTextHolder.gameObject.SetActive(false);
         SpecialEventDone = true;
+        gameFlagManager.makeDecision(yes);
     }
 
     public void ShowRadioHelp()
@@ -273,7 +290,7 @@ public class StoryManager : MonoBehaviour
 
     public void ShowPackageHelp()
     {
-        HelpTextHolder.text = "Should I just send it...";
+        HelpTextHolder.text = "Knowing my son will have it is indeed a relief...";
     }
 
     public void ShowDeclineHelp()
@@ -285,6 +302,11 @@ public class StoryManager : MonoBehaviour
         {
             HelpTextHolder.text = "It's tough but I need to decide...";
         }
+    }
+
+    public void ShowLetterHelp()
+    {
+        HelpTextHolder.text = "It's nice to have something to read during the war...";
     }
 
     public void ShowNothingHelp()

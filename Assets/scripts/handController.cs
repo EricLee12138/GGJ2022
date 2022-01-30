@@ -11,8 +11,8 @@ public class handController : MonoBehaviour
       Vector3 mousePos;
       mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
       {
-         Debug.Log(mousePos.x);
-         Debug.Log(mousePos.y);
+         // Debug.Log(mousePos.x);
+         // Debug.Log(mousePos.y);
       }
       mousePos.z += 10;
       this.transform.position = mousePos;

@@ -1361,6 +1361,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1432266147}
+        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+        m_MethodName: ShowLetterHelp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &758875962
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1694,8 +1706,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30.036}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -375, y: -240}
-  m_SizeDelta: {x: 526.35, y: 658.22}
+  m_AnchoredPosition: {x: -405.17, y: -257.44}
+  m_SizeDelta: {x: 456.66, y: 658.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &936625811
 MonoBehaviour:
@@ -2094,8 +2106,8 @@ MonoBehaviour:
   m_text: hdsahdhalkds halosdialdsli adhslhjd isldhjsild fisjdijis jdsiald djilsajdhilsadji
     djsiladjisaldaslfih iljildjlisa lijfdlsaiji iaj ijilad liaw
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a703d110c8fa5834c987dc3df08c845f, type: 2}
-  m_sharedMaterial: {fileID: 7464052730488819084, guid: a703d110c8fa5834c987dc3df08c845f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3480be3efbbfe6045b15b7a579aa6341, type: 2}
+  m_sharedMaterial: {fileID: -770108649229578197, guid: 3480be3efbbfe6045b15b7a579aa6341, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3062,6 +3074,7 @@ MonoBehaviour:
   EnvelopeA: {fileID: 758875958}
   EnvelopeB: {fileID: 1971923202}
   EnvelopeOpen: {fileID: 1530540397}
+  Package: {fileID: 549705578}
   EndingObj: {fileID: 1108576515}
   EndingMask: {fileID: 1044122023}
   EndingEnvelope: {fileID: 475080833}
@@ -3106,7 +3119,7 @@ MonoBehaviour:
   gameText: 'I probably should make a decision. '
   gameFlags: []
   specialEventFlag: isCornSteal
-  specialEventBody: 'I probably should make a decision. '
+  specialEventBody: 
   decision: 0
   decisionFrom: radio
 --- !u!4 &1432266149
@@ -4741,6 +4754,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1432266147}
         m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
         m_MethodName: ReadLetter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1432266147}
+        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+        m_MethodName: ShowLetterHelp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

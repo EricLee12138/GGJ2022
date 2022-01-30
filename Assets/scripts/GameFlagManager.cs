@@ -42,7 +42,7 @@ public class GameFlagManager : MonoBehaviour {
 
     private void OnDrawGizmos() {
         ///debug
-        readGameData(0);
+        // readGameData(0);
     }
 
     private void readGameData (int day){
