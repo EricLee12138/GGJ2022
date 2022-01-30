@@ -11,6 +11,8 @@ public class soundManager : MonoBehaviour
     public GameObject knob;
     public AudioClip sndClick;
     public AudioClip sndCoin;
+    public AudioClip sndNews;
+    public AudioClip sndEnd;
     public AudioClip[] radioClips;
     public AudioSource audio;
 
@@ -18,7 +20,10 @@ public class soundManager : MonoBehaviour
     {
         sndClick = Resources.Load<AudioClip>("click");
         sndCoin = Resources.Load<AudioClip>("coin");
+        sndNews = Resources.Load<AudioClip>("newspaper");
+        sndEnd = Resources.Load<AudioClip>("ending");
         radioClips = Resources.LoadAll<AudioClip>("Radio/");
+        
     }
 
     private void Start()
@@ -36,6 +41,16 @@ public class soundManager : MonoBehaviour
 
     public void playCoinSound() {
         audio.clip = sndCoin;
+        playSound();
+    }
+    
+    public void playNewsSound() {
+        audio.clip = sndNews;
+        playSound();
+    }
+    
+    public void playEnding() {
+        audio.clip = sndEnd;
         playSound();
     }
 
