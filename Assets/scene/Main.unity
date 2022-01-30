@@ -1070,11 +1070,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: hdsahdhalkds halosdialdsli adhslhjd isldhjsild fisjdijis jdsiald djilsajdhilsadji
-    djsiladjisaldaslfih iljildjlisa lijfdlsaiji iaj ijilad liaw
+  m_text: "Dear Jason,\n\nI\u2019m writing to resign from my position as customer
+    service representative, effective August 14, 2020.\n\nI\u2019ve recently decided
+    to go back to school, and my program starts in early September. I\u2019m tendering
+    my resignation now so that I can be as helpful as possible to you during the
+    transition.\n\nI\u2019ve truly enjoyed my time working with you and everyone
+    else on our team at LMK. It\u2019s rare to find a customer service role that
+    offers as much opportunity to grow and learn, as well as such a positive, inspiring
+    team of people to grow and learn with.\n\nThanks, and best wishes,\n\nNicole
+    Thomas"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4737ef46af8364068a6c49162ffd5da8, type: 2}
+  m_sharedMaterial: {fileID: -7857133631955200666, guid: 4737ef46af8364068a6c49162ffd5da8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1098,8 +1105,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 28.08
+  m_fontSizeBase: 28.08
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1110,7 +1117,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 50
+  m_lineSpacing: -70.3
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
