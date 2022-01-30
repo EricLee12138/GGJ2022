@@ -12,6 +12,8 @@ public class Choice : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler,
 
     TMP_Text text;
 
+    Color Green = new Color(0.12f, 0.56f, 0.10f);
+
     void Start()
     {
         text = GetComponent<TMP_Text>();
@@ -19,17 +21,17 @@ public class Choice : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler,
 
     public void OnPointerEnter(PointerEventData data)
     {
-        text.fontStyle = FontStyles.Underline;
+        text.color = Green;
     }
 
     public void OnPointerExit(PointerEventData data)
     {
-        text.fontStyle = FontStyles.Normal;
+        text.color = Color.black;
     }
 
     public void OnPointerClick(PointerEventData data)
     {
-        text.fontStyle = FontStyles.Normal;
+        text.color = Color.black;
         storyManager.Choose(yes);
     }
 }

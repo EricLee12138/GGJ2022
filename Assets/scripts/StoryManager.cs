@@ -13,6 +13,8 @@ public class StoryManager : MonoBehaviour
     GameObject NewspaperMask;
     [SerializeField]
     GameObject NewspaperBg;
+    [SerializeField]
+    TMP_Text NewspaperContinue;
 
     [SerializeField]
     TMP_Text DateHolder;
@@ -121,6 +123,7 @@ public class StoryManager : MonoBehaviour
         NewspaperMask.SetActive(true);
         NewspaperMask.GetComponent<Animator>().SetTrigger("FadeIn");
         NewspaperBg.GetComponent<Animator>().SetTrigger("FadeIn");
+        NewspaperContinue.GetComponent<Animator>().SetTrigger("FadeIn");
     }
 
     public void EndGame()
@@ -203,6 +206,7 @@ public class StoryManager : MonoBehaviour
 
         NewspaperMask.GetComponent<Animator>().SetTrigger("FadeOut");
         NewspaperBg.GetComponent<Animator>().SetTrigger("FadeOut");
+        NewspaperContinue.GetComponent<Animator>().SetTrigger("FadeOut");
 
         StartCoroutine(WaitUntilAnimationIsName(NewspaperMask, "Idle"));
     }
