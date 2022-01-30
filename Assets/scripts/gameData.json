@@ -10,11 +10,11 @@
       "specialEventFlag": "isCornSteal",
       "yes": [
         1,
-        2
+        1
       ],
       "no": [
         0,
-        1
+        0
       ],
       "conditionSpecialEvent": "",
       "conditionRadio": "",
@@ -37,7 +37,7 @@
       ],
       "no": [
         0,
-        1
+        0
       ],
       "conditionSpecialEvent": "",
       "conditionRadio": "",
@@ -55,12 +55,12 @@
       "letterText": "Hello mom,\n\nI haven't been feeling well as of late. I've caught something from being stuck in the cold and wet trenches with my worn out boots, but I am resolved to regain my health and keep fighting for you and the rest of our countrymen. \n\nThinking of you often.\nLove, Decker",
       "specialEventFlag": "isHelpNeighbor",
       "yes": [
-        -1,
-        0
-      ],
-      "no": [
         1,
         1
+      ],
+      "no": [
+        0,
+        0
       ],
       "conditionSpecialEvent": "",
       "conditionRadio": "",
@@ -94,19 +94,19 @@
 
     {
       "newsTitle": "Battle Rages On",
-      "newsText": "AS the war contiunes, remember to think of our soldiers fighting for us today. Any letters of thanks would be greatly appreciated and give our sons the push to carry on the good fight.",
+      "newsText": "AS the war continues, remember to think of our soldiers fighting for us today. Any letters of thanks would be greatly appreciated and give our sons the push to carry on the good fight.",
       "decisionFrom": "letter",
       "gameText": "Dear Diary,\nMy grouchy sister wrote me a letter recently about the homeless boys in her neighborhood. It made me think of my Decker and if he were homeless, would I help him. My boy needs help on the lines right now though. I may get a ride in town from my neighbors tomorrow... Should I steal from the less needy to help my boy at war?",
       "radioText": "",
       "letterText": "Greetings sister,\nYou should consider yourself grateful you don't have to live downtown with the urchins like I do. There are beggar children on the street, some the same age as your Decker. They have nothing to their name but the clothes on their back and boots on their feet. But if you ask me, they must have stolen those boots, they're too new to be their own.\nRegards,\nBuela",
       "specialEventFlag": "isHelpHobo",
       "yes": [
-        -1,
-        0
-      ],
-      "no": [
         1,
         1
+      ],
+      "no": [
+        0,
+        0
       ],
       "conditionSpecialEvent": "",
       "conditionRadio": "",
@@ -125,7 +125,7 @@
       "specialEventFlag": "ishospitalSteal",
       "yes": [
         1,
-        2
+        1
       ],
       "no": [
         0,
@@ -145,13 +145,13 @@
       "gameText": "I wasn't sure whether to tell him or to take it for my son.",
       "radioText": "",
       "letterText": "",
-      "specialEventFlag": "isHelpColdKid",
+      "specialEventFlag": "isStealBook",
       "yes": [
-        -1,
-        0
+        1,
+        1
       ],
       "no": [
-        0,
+        -1,
         0
       ],
       "conditionSpecialEvent": "",
@@ -168,14 +168,14 @@
       "gameText": "Dear Diary,\n\nI'm thinking of going to the peninsula to help my son, even though I don't have much experience I know I can help him.",
       "radioText": "Help our sons at war! If you have any experience in nursing or caretaking, you may be able to help our soldiers on the front lines. Please come to the Redemption Rangers Headquarters for an interview.",
       "letterText": "",
-      "specialEventFlag": "isBoots",
+      "specialEventFlag": "",
       "yes": [
-        1,
+        0,
         1
       ],
       "no": [
         0,
-        0
+        1
       ],
       "conditionSpecialEvent": "",
       "conditionRadio": "",
