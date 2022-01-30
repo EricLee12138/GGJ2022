@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="44f4879c-f8b7-4f4f-8a4e-5fe9897a99a7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.globalgamejam2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.globalgamejam2022/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scene/level.unity.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scene/level.unity.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scripts/soundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/soundManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/coin_back.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/coin_back.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/coin_back.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/coin_back.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/coin_front.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/coin_front.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art/coin_front.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art/coin_front.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/Radio.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/Radio.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scene/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scene/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +21,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/handController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="24O361nh5I1KSIzDy8wAGgxEyXd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -66,7 +74,7 @@
       <updated>1643487661475</updated>
       <workItem from="1643487664134" duration="13452000" />
       <workItem from="1643507413301" duration="71000" />
-      <workItem from="1643507555000" duration="7261000" />
+      <workItem from="1643507555000" duration="9500000" />
     </task>
     <servers />
   </component>
