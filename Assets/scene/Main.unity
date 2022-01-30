@@ -3164,13 +3164,13 @@ MonoBehaviour:
     / Pinterest'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 10399777931f7bf40ad063cdf96abd79, type: 2}
-  m_sharedMaterial: {fileID: -7857133631955200666, guid: 4737ef46af8364068a6c49162ffd5da8, type: 2}
+  m_sharedMaterial: {fileID: -2472800644956129797, guid: 10399777931f7bf40ad063cdf96abd79, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 0
   m_fontColor: {r: 0, g: 0, b: 0, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -3577,8 +3577,8 @@ MonoBehaviour:
   EndingEnvelopeOpen: {fileID: 1827626391}
   EndingLetter: {fileID: 1107060266}
   EndingComment: {fileID: 1108386}
-  EndingLetterText: {fileID: 331634178}
-  EndingCommentText: {fileID: 1318118135}
+  EndingLetterText: {fileID: 331634180}
+  EndingCommentText: {fileID: 1318118137}
   coin: {fileID: 1680175692}
   DayPassed: -1
   EvilPoint: 0

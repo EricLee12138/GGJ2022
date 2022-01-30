@@ -135,13 +135,6 @@ public class endingBranch : MonoBehaviour
             "Dear Diary, Delores Wells sent out a package yesterday and it seems as though she is leaving for somewhere today. I saw her leave with some luggage, she looked very tired and uneasy.",
             false
         ));
-        endingBranches.Add(new EndingBranch("isColdKid","","I remember the lady as...",false));
-        endingBranches.Add(new EndingBranch("isHelpHobo","","I appreciate...",false));
-        endingBranches.Add(new EndingBranch("isHospital","","We worked on the surgery whilst...",false));
-        endingBranches.Add(new EndingBranch("isSon","","Mom's a hero...",false));
-        endingBranches.Add(new EndingBranch("isMom","","I had to...",false));
-        endingBranches.Add(new EndingBranch("isEeyore","","carrot",false));
-        endingBranches.Add(new EndingBranch("isJoinWar","","She decided to join the war...",false));
         gameFlagManager = this.GetComponent<GameFlagManager>();
         foreach (EndingBranch endingBranch in endingBranches) {
             if (endingBranch.isFromSon) {            

@@ -163,6 +163,7 @@ public class StoryManager : MonoBehaviour
         EndingCommentText.GetComponent<Animator>().SetTrigger("FadeIn");
 
         EndingLetterText.text = GetComponent<endingBranch>().getSonText();
+        print(GetComponent<endingBranch>().getSonText());
         EndingCommentText.text = GetComponent<endingBranch>().getNeighborText();
     }
 
