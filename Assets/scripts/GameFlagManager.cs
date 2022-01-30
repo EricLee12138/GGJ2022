@@ -172,5 +172,5 @@ public class GameFlagManager : MonoBehaviour {
     public string specialEventBody = "";//Event text
     public bool decision = false;
     public string decisionFrom = "special";
-    public string newsText = "1943 Feb 1st, the weather...";
+    public string newsText = "";
 }
