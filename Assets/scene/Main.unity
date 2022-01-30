@@ -2512,6 +2512,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: photo
       objectReference: {fileID: 0}
+    - target: {fileID: 7131950701552885523, guid: cfeb95af36ace4d5fba0dbb7c397de01, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1432266145}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfeb95af36ace4d5fba0dbb7c397de01, type: 3}
 --- !u!1 &1184354467
@@ -2737,12 +2741,12 @@ SpriteRenderer:
   m_SortingLayerID: 388952817
   m_SortingLayer: 5
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: bfdee3d2dc317844787b559476eea1b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 23df4bc16aa034c3ca19404e98617b46, type: 3}
   m_Color: {r: 0.7075472, g: 0.6759305, b: 0.5517978, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.84, y: 6.2}
+  m_Size: {x: 7.53, y: 10.05}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3285,7 +3289,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1432266145
 GameObject:
@@ -5211,17 +5215,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999001334}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.008686488, w: 0.9999623}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0010186977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 430607655}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.995}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26, y: -147}
-  m_SizeDelta: {x: 456.66, y: 399.28}
+  m_AnchoredPosition: {x: -27, y: -210}
+  m_SizeDelta: {x: 519.93, y: 399.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1999001336
 Animator:
@@ -5306,7 +5310,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 3
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -5471,8 +5475,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 0
-  m_fontColor: {r: 0, g: 0, b: 0, a: 0}
+    rgba: 1910315
+  m_fontColor: {r: 0.16981131, g: 0.14921534, b: 0.113207534, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5565,16 +5569,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097081662}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.008295892, w: 0.9999656}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0010186977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 430607655}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.951}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26, y: 195}
+  m_AnchoredPosition: {x: -26, y: 136}
   m_SizeDelta: {x: 640.35, y: 186.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &8389605670812938630
