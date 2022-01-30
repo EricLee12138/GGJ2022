@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44f4879c-f8b7-4f4f-8a4e-5fe9897a99a7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/scripts/endingBranch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/endingBranch.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/throwCoin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/throwCoin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +72,7 @@
       <workItem from="1643487664134" duration="13452000" />
       <workItem from="1643507413301" duration="71000" />
       <workItem from="1643507555000" duration="22676000" />
-      <workItem from="1643569496399" duration="3892000" />
+      <workItem from="1643569496399" duration="4671000" />
     </task>
     <servers />
   </component>

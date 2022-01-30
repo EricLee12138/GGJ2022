@@ -9,6 +9,8 @@ public class throwCoin : MonoBehaviour
     public Sprite coinDown;
     public Sprite coinFlip;
     public Sprite currentSprite;
+    [Range(0,2)]
+    public float delay = 0f;
     public GameObject radio;
     private soundManager playSound;
     private Animation anim;
@@ -42,7 +44,7 @@ public class throwCoin : MonoBehaviour
             currentSprite = coinDown;
         }
         anim.Play();
-        yield return new WaitForSeconds(playSound.sndCoin.length-0.1f);
+        yield return new WaitForSeconds(playSound.sndCoin.length-delay);
         this.GetComponent<SpriteRenderer>().sprite = currentSprite;
     }
 }
