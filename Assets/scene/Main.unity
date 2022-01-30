@@ -2110,11 +2110,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: hdsahdhalkds halosdialdsli adhslhjd isldhjsild fisjdijis jdsiald djilsajdhilsadji
-    djsiladjisaldaslfih iljildjlisa lijfdlsaiji iaj ijilad liaw
+  m_text: "I\u2019m writing to resign from my position as customer service representative,
+    effective August 14, 2020.\n\nI\u2019ve recently decided to go back to school,
+    and my program starts in early September. I\u2019m tendering my resignation now
+    so that I can be as helpful as possible to you during the transition.\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3480be3efbbfe6045b15b7a579aa6341, type: 2}
-  m_sharedMaterial: {fileID: -770108649229578197, guid: 3480be3efbbfe6045b15b7a579aa6341, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4737ef46af8364068a6c49162ffd5da8, type: 2}
+  m_sharedMaterial: {fileID: -7857133631955200666, guid: 4737ef46af8364068a6c49162ffd5da8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2144,13 +2146,13 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 50
+  m_lineSpacing: -70
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -2845,10 +2847,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next Day
+  m_text: Next  Day
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4737ef46af8364068a6c49162ffd5da8, type: 2}
+  m_sharedMaterial: {fileID: -7857133631955200666, guid: 4737ef46af8364068a6c49162ffd5da8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2872,7 +2874,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56.05
+  m_fontSize: 76.4
   m_fontSizeBase: 128
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3129,6 +3131,7 @@ MonoBehaviour:
   specialEventBody: 
   decision: 0
   decisionFrom: radio
+  newsText: 
 --- !u!4 &1432266149
 Transform:
   m_ObjectHideFlags: 0
@@ -3204,8 +3207,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ChoiceA I would do something evil
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4737ef46af8364068a6c49162ffd5da8, type: 2}
+  m_sharedMaterial: {fileID: -7857133631955200666, guid: 4737ef46af8364068a6c49162ffd5da8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3850,8 +3853,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ChoiceB I would do something super nice
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4737ef46af8364068a6c49162ffd5da8, type: 2}
+  m_sharedMaterial: {fileID: -7857133631955200666, guid: 4737ef46af8364068a6c49162ffd5da8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

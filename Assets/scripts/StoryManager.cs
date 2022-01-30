@@ -222,7 +222,6 @@ public class StoryManager : MonoBehaviour
             return;
         }
         print("radio");
-        SpecialEventHappened = true;
         RadioTextBg.SetActive(true);
         RadioTextBg.GetComponent<Animator>().SetTrigger("FadeIn");
         RadioTextHolder.GetComponent<Animator>().SetTrigger("FadeIn");
@@ -234,14 +233,15 @@ public class StoryManager : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         RadioTextBg.GetComponent<Animator>().SetTrigger("FadeOut");
         RadioTextHolder.GetComponent<Animator>().SetTrigger("FadeOut");
-        if (DecisionSource == "radio")
+        if (DecisionSource == "radio" && !SpecialEventHappened)
         {
             MemoTextHolder.gameObject.SetActive(true);
             ChoiceATextHolder.gameObject.SetActive(true);
             ChoiceBTextHolder.gameObject.SetActive(true);
 
             // Append to memo
-            MemoTextHolder.text +=  '\n' + Decision;
+            MemoTextHolder.text +=  EventText.Length > 0 ? '\n' + Decision : Decision;
+            SpecialEventHappened = true;
         }
 
         StartCoroutine(WaitUntilAnimationIsName(RadioTextBg, "Idle"));
@@ -251,32 +251,31 @@ public class StoryManager : MonoBehaviour
     {
         if (LetterText.Length <= 0) return;
         print("letter");
-        SpecialEventHappened = true;
         EnvelopeB.SetActive(false);
         EnvelopeOpen.SetActive(true);
         Letter.SetActive(true);
         LetterTextHolder.gameObject.SetActive(true);
-        if (DecisionSource == "letter")
+        if (DecisionSource == "letter" && !SpecialEventHappened)
         {
             MemoTextHolder.gameObject.SetActive(true);
             ChoiceATextHolder.gameObject.SetActive(true);
             ChoiceBTextHolder.gameObject.SetActive(true);
             
             // Append to memo
-            MemoTextHolder.text +=  '\n' + Decision;
+            MemoTextHolder.text +=  EventText.Length > 0 ? '\n' + Decision : Decision;
+            SpecialEventHappened = true;
         }
     }
 
     public void Choose(bool yes) {
         if (yes)
         {
-            Decision += '\n' + ChoiceA;
+            MemoTextHolder.text += '\n' + ChoiceA;
             Package.SetActive(true);
         } else
         {
-            Decision += '\n' + ChoiceB;
+            MemoTextHolder.text += '\n' + ChoiceB;
         }
-        MemoTextHolder.text = Decision;
         ChoiceATextHolder.gameObject.SetActive(false);
         ChoiceBTextHolder.gameObject.SetActive(false);
         SpecialEventDone = true;
