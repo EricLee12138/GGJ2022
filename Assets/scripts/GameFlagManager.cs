@@ -11,6 +11,7 @@ using UnityEditor;
 public class GameData
 {
     public string newsText;//everyday newspaper, do not contain decision
+    public string newsTitle;//everyday newspaper, do not contain decision
     public string gameText;
     public string radioText;
     public string letterText;
@@ -63,6 +64,7 @@ public class GameFlagManager : MonoBehaviour {
         this.no = current.no;
         this.decisionFrom = current.decisionFrom;
         this.gameText = current.gameText;
+        this.newsTitle = current.newsTitle;
         this.newsText = current.newsText;
         this.choiceA = current.choiceA;
         this.choiceB = current.choiceB;
@@ -177,6 +179,7 @@ public class GameFlagManager : MonoBehaviour {
     public bool decision = false;
     public string decisionFrom = "special";
     public string newsText = "";
+    public string newsTitle;//everyday newspaper, do not contain decision
     public string choiceA = "";
     public string choiceB = "";
 }

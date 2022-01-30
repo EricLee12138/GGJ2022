@@ -15,6 +15,10 @@ public class StoryManager : MonoBehaviour
     GameObject NewspaperBg;
     [SerializeField]
     TMP_Text NewspaperContinue;
+    [SerializeField]
+    TMP_Text NewspaperText;
+    [SerializeField]
+    TMP_Text NewspaperTitle;
 
     [SerializeField]
     TMP_Text DateHolder;
@@ -84,6 +88,9 @@ public class StoryManager : MonoBehaviour
     public string LetterText = "Dear mom";
     public string EventText = "Today I met...";
 
+    public string NewsText = "Today I met...";
+    public string NewsTitle = "Today I met...";
+
     public GameObject radio;
     private soundManager _soundManager;
 
@@ -106,12 +113,11 @@ public class StoryManager : MonoBehaviour
 
     public void EndToday()
     {
-        if (!SpecialEventHappened || !SpecialEventDone) // Special event not done, can't end today
-        {
-            DeclineEndToday();
-            return;
-        }
-
+        // if (!SpecialEventHappened || !SpecialEventDone) // Special event not done, can't end today
+        // {
+        //     DeclineEndToday();
+        //     return;
+        // }
 
         // End today
         cameraMovement.DisableMovement();
@@ -119,20 +125,23 @@ public class StoryManager : MonoBehaviour
         {
             _soundManager.playNewsSound();
             gameFlagManager.dayPass();
-        } 
-        
-        if (DayPassed == 8)
+            NewsTitle = gameFlagManager.newsTitle;
+            NewsText = gameFlagManager.newsText;
+        } else
         {
-            // Ending
-            _soundManager.playEnding();
-            EndGame();
-            return;
+            NewsTitle = "War Looms as Tensions Rise";
+            NewsText = "War has broken out on the peninsula! The government has ordered all men of age to aid in our war against tyranny and cruelty. We are sending our boys to war but they will come back as heroes. ";
         }
+        
+        NewspaperText.text = NewsText;
+        NewspaperTitle.text = NewsTitle;
 
         NewspaperMask.SetActive(true);
         NewspaperMask.GetComponent<Animator>().SetTrigger("FadeIn");
         NewspaperBg.GetComponent<Animator>().SetTrigger("FadeIn");
         NewspaperContinue.GetComponent<Animator>().SetTrigger("FadeIn");
+        NewspaperText.GetComponent<Animator>().SetTrigger("FadeIn");
+        NewspaperTitle.GetComponent<Animator>().SetTrigger("FadeIn");
     }
 
     public void EndGame()
@@ -149,6 +158,21 @@ public class StoryManager : MonoBehaviour
 
     public void StartToday()
     {
+        if (DayPassed == 6)
+        {
+            print("end");
+            // Ending
+            NewspaperMask.GetComponent<Animator>().SetTrigger("FadeOut");
+            NewspaperBg.GetComponent<Animator>().SetTrigger("FadeOut");
+            NewspaperContinue.GetComponent<Animator>().SetTrigger("FadeOut");
+            NewspaperText.GetComponent<Animator>().SetTrigger("FadeOut");
+            NewspaperTitle.GetComponent<Animator>().SetTrigger("FadeOut");
+            StartCoroutine(WaitUntilAnimationIsName(NewspaperMask, "Idle"));
+            _soundManager.playEnding();
+            EndGame();
+            return;
+        }
+
         EnvelopeA.gameObject.SetActive(false);
         EnvelopeB.gameObject.SetActive(false);
         EnvelopeOpen.gameObject.SetActive(false);
@@ -217,7 +241,8 @@ public class StoryManager : MonoBehaviour
         NewspaperMask.GetComponent<Animator>().SetTrigger("FadeOut");
         NewspaperBg.GetComponent<Animator>().SetTrigger("FadeOut");
         NewspaperContinue.GetComponent<Animator>().SetTrigger("FadeOut");
-
+        NewspaperText.GetComponent<Animator>().SetTrigger("FadeOut");
+        NewspaperTitle.GetComponent<Animator>().SetTrigger("FadeOut");
         StartCoroutine(WaitUntilAnimationIsName(NewspaperMask, "Idle"));
     }
 
