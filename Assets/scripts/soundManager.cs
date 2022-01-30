@@ -7,10 +7,19 @@ using Random = System.Random;
 
 public class soundManager : MonoBehaviour
 {
-    public AudioClip sndClick = Resources.Load<AudioClip>("click");
-    public AudioClip sndCoin = Resources.Load<AudioClip>("coin");
-    public AudioClip[] radioClips = Resources.LoadAll<AudioClip>("Radio/");
+
+    public AudioClip sndClick;
+    public AudioClip sndCoin;
+    public AudioClip[] radioClips;
     public AudioSource audio;
+
+    private void Awake()
+    {
+        sndClick = Resources.Load<AudioClip>("click");
+        sndCoin = Resources.Load<AudioClip>("coin");
+        radioClips = Resources.LoadAll<AudioClip>("Radio/");
+    }
+
     private void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -20,7 +29,7 @@ public class soundManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) {
             Debug.Log("Pressed primary button.");
             audio.clip = sndClick;
-            playSound();
+            playRadio();
         }
     }
 
@@ -29,14 +38,15 @@ public class soundManager : MonoBehaviour
         playSound();
     }
 
-    public void playRadio() {
+    public IEnumerator playRadio() {
         int radioFM = UnityEngine.Random.Range(0,radioClips.Length);
         audio.clip = radioClips[radioFM];
-        playSound();
+        audio.PlayOneShot(audio.clip);
+        yield return new WaitForSeconds(3f);
     }
 
-    public IEnumerator playSound() {
-        audio.Play();
-        yield return new WaitForSeconds(audio.clip.length);
+    public void playSound() {
+        audio.PlayOneShot(audio.clip);
+        //yield return new WaitForSeconds(audio.clip.length);
     }
 }
