@@ -24,6 +24,13 @@ public class StoryManager : MonoBehaviour
     TMP_Text ChoiceATextHolder;
     [SerializeField]
     TMP_Text ChoiceBTextHolder;
+    [SerializeField]
+    TMP_Text RadioTextHolder;
+
+    [SerializeField]
+    GameObject RadioTextBg;
+    [SerializeField]
+    GameObject Letter;
 
     public int DayPassed = -1;
 
@@ -89,7 +96,7 @@ public class StoryManager : MonoBehaviour
         EventText = gameFlagManager.specialEventBody;
         ChoiceA = "A";      
         ChoiceB = "B";
-        DecisionSource = "Radio"; // TBD
+        DecisionSource = gameFlagManager.decisionFrom;
         Decision = gameFlagManager.gameText;
 
         DateHolder.text = (7 + DayPassed).ToString();
@@ -97,11 +104,71 @@ public class StoryManager : MonoBehaviour
         LetterTextHolder.text = LetterText;
         ChoiceATextHolder.text = ChoiceA;
         ChoiceBTextHolder.text = ChoiceB;
+        RadioTextHolder.text =  RadioText;
 
-        cameraMovement.EnableMovement();
+        if (DecisionSource == "letter" || DecisionSource == "radio")
+        {
+            MemoTextHolder.gameObject.SetActive(false);
+            ChoiceATextHolder.gameObject.SetActive(false);
+            ChoiceBTextHolder.gameObject.SetActive(false);
+        } else if (DecisionSource == "special")
+        {
+            MemoTextHolder.gameObject.SetActive(true);
+            ChoiceATextHolder.gameObject.SetActive(true);
+            ChoiceBTextHolder.gameObject.SetActive(true);
+        } else {
+            Debug.LogError("Something is definitely wrong");
+        }
+
         NewspaperMask.GetComponent<Animator>().SetTrigger("FadeOut");
         NewspaperBg.GetComponent<Animator>().SetTrigger("FadeOut");
         NewspaperClip.GetComponent<Animator>().SetTrigger("FadeOut");
+
+        StartCoroutine(WaitUntilAnimationDone(NewspaperMask));
+    }
+
+    IEnumerator WaitUntilAnimationDone(GameObject obj)
+    {
+        yield return new WaitUntil(() => obj.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Idle"));
+        obj.SetActive(false);
+        cameraMovement.EnableMovement();
+    }
+
+    public void ListenToRadio()
+    {
+        if (RadioText.Length <= 0) return;
+        print("radio");
+        RadioTextBg.SetActive(true);
+        RadioTextBg.GetComponent<Animator>().SetTrigger("FadeIn");
+        RadioTextHolder.GetComponent<Animator>().SetTrigger("FadeIn");
+        StartCoroutine(WaitForSeconds(5f));
+        if (DecisionSource == "radio")
+        {
+            MemoTextHolder.gameObject.SetActive(true);
+            ChoiceATextHolder.gameObject.SetActive(true);
+            ChoiceBTextHolder.gameObject.SetActive(true);
+        }
+    }
+
+    IEnumerator WaitForSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        RadioTextBg.GetComponent<Animator>().SetTrigger("FadeOut");
+        RadioTextHolder.GetComponent<Animator>().SetTrigger("FadeOut");
+        StartCoroutine(WaitUntilAnimationDone(RadioTextBg));
+    }
+
+    public void ReadLetter()
+    {
+        if (LetterText.Length <= 0) return;
+        print("letter");
+        Letter.SetActive(true);
+        if (DecisionSource == "letter")
+        {
+            MemoTextHolder.gameObject.SetActive(true);
+            ChoiceATextHolder.gameObject.SetActive(true);
+            ChoiceBTextHolder.gameObject.SetActive(true);
+        }
     }
 
     void DeclineEndToday()

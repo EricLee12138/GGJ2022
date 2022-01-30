@@ -3,7 +3,7 @@
 {
   "decisionFrom": "radio",
   "gameText": "I probably should make a decision. ",
-  "radioText": "",
+  "radioText": "radio",
   "letterText": "Good Bye",
   "specialEventFlag": "isCornSteal",
   "yes": [1,2],
