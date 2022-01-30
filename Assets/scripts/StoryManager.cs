@@ -66,15 +66,15 @@ public class StoryManager : MonoBehaviour
 
     public void EndToday()
     {
-        if (SpecialEventHappened && !SpecialEventDone) // Special event not done, can't end today
-        {
-            DeclineEndToday();
-            return;
-        }
+        // if (SpecialEventHappened && !SpecialEventDone) // Special event not done, can't end today
+        // {
+        //     DeclineEndToday();
+        //     return;
+        // }
 
         // End today
         cameraMovement.DisableMovement();
-        DayPassed++;
+        gameFlagManager.dayPass();
         NewspaperMask.SetActive(true);
         NewspaperMask.GetComponent<Animator>().SetTrigger("FadeIn");
         NewspaperBg.GetComponent<Animator>().SetTrigger("FadeIn");
