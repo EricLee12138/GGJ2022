@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44f4879c-f8b7-4f4f-8a4e-5fe9897a99a7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.globalgamejam2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.globalgamejam2022/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scripts/endingBranch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/endingBranch.cs" afterDir="false" />
-    </list>
+    <list default="true" id="44f4879c-f8b7-4f4f-8a4e-5fe9897a99a7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
