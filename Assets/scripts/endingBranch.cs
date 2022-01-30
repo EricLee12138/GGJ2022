@@ -35,10 +35,36 @@ public class endingBranch : MonoBehaviour
         gameFlagManager = this.GetComponent<GameFlagManager>();
     }
 
-    public string getEndingText() {
-        string endingText = "";
+    public string getSonText() {
+        string _sonText = "";
+        foreach (var branch in endingBranches) {
+            if (branch.isFromSon == true) {
+                if (gameFlagManager.hasFlag(branch.gameFlag))
+                {
+                    _sonText += branch.branchBoby;
+                }
+            }
+        }
+
+        sonText = _sonText;
+        return _sonText;
+    }
+
+    public string getNeighborText()
+    {        
+        string _neighborText = "";
+        foreach (var branch in endingBranches) {
+            if (branch.isFromSon == false) {
+                if (gameFlagManager.hasFlag(branch.gameFlag))
+                {
+                    _neighborText += branch.branchBoby;
+                }
+            }
+        }
+
+        neighborText = _neighborText;
+        return _neighborText;
         
-        return endingText;
     }
 
 }
