@@ -47,7 +47,7 @@ public class soundManager : MonoBehaviour
         timeElapsed += Time.deltaTime;
         float z = knob.transform.rotation.z;
         knob.transform.localRotation = Quaternion.Euler(0,0,Mathf.Lerp( z,knobRotation, timeElapsed / lerpDuration));
-        print(z);
+        // print(z);
     }
 
     public void playRadio() {

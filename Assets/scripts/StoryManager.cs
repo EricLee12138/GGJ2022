@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [RequireComponent(typeof(CameraMovement))]
+[RequireComponent(typeof(GameFlagManager))]
 public class StoryManager : MonoBehaviour
 {
     [SerializeField]
@@ -12,28 +14,52 @@ public class StoryManager : MonoBehaviour
     [SerializeField]    
     GameObject NewspaperClip;
 
-    public int DayPassed = 0;
+    [SerializeField]
+    TMP_Text DateHolder;
+    [SerializeField]
+    TMP_Text MemoTextHolder;
+    [SerializeField]
+    TMP_Text LetterTextHolder;
+    [SerializeField]
+    TMP_Text ChoiceATextHolder;
+    [SerializeField]
+    TMP_Text ChoiceBTextHolder;
+
+    public int DayPassed = -1;
 
     public int EvilPoint = 0;
-    public int KindPoint = 100;
+    public int SonPoint = 100;
 
-    public bool SpeicalEventHappened = false;
-    public bool SpeicalEventDone = false;
+    public int[] Yes;
+    public int[] No;
 
+    public bool SpecialEventHappened = false;
+    public bool SpecialEventDone = false;
+    
+    public string DecisionSource = "Radio"; // Radio, Letter, SpecialEvent
     public string Decision = "Should I do A or do B";
     public string ChoiceA = "A";
     public string ChoiceB = "B";
+    
+    public string RadioText = "It is announced that";
+    public string LetterText = "Dear mom";
+    public string EventText = "Today I met...";
 
     CameraMovement cameraMovement;
+    GameFlagManager gameFlagManager;
     
     void Start()
     {
         cameraMovement = GetComponent<CameraMovement>();
+        gameFlagManager = GetComponent<GameFlagManager>();
+        Debug.Assert(MemoTextHolder != null);
+        Debug.Assert(LetterTextHolder != null);
+        EndToday();
     }
 
     public void EndToday()
     {
-        if (SpeicalEventHappened && !SpeicalEventDone) // Special event not done, can't end today
+        if (SpecialEventHappened && !SpecialEventDone) // Special event not done, can't end today
         {
             DeclineEndToday();
             return;
@@ -50,6 +76,28 @@ public class StoryManager : MonoBehaviour
 
     public void StartToday()
     {
+        // Read data from GameFlagManager
+        DayPassed = gameFlagManager.day; // D
+        EvilPoint = gameFlagManager.evilPoint;
+        SonPoint = gameFlagManager.sonPoint;
+        Yes = gameFlagManager.yes;
+        No = gameFlagManager.no;
+        SpecialEventHappened = gameFlagManager.specialEventBody.Length > 0;
+        SpecialEventDone = false;
+        RadioText = gameFlagManager.radioText;
+        LetterText = gameFlagManager.letterText;
+        EventText = gameFlagManager.specialEventBody;
+        ChoiceA = "A";      
+        ChoiceB = "B";
+        DecisionSource = "Radio"; // TBD
+        Decision = gameFlagManager.gameText;
+
+        DateHolder.text = (7 + DayPassed).ToString();
+        MemoTextHolder.text = Decision;
+        LetterTextHolder.text = LetterText;
+        ChoiceATextHolder.text = ChoiceA;
+        ChoiceBTextHolder.text = ChoiceB;
+
         cameraMovement.EnableMovement();
         NewspaperMask.GetComponent<Animator>().SetTrigger("FadeOut");
         NewspaperBg.GetComponent<Animator>().SetTrigger("FadeOut");

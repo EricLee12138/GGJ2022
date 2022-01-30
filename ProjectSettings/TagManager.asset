@@ -50,3 +50,9 @@ TagManager:
   - name: Mask
     uniqueID: 388952817
     locked: 0
+  - name: Hand
+    uniqueID: 2706680821
+    locked: 0
+  - name: UI
+    uniqueID: 1009811109
+    locked: 0

@@ -48,9 +48,9 @@ public class GameFlagManager : MonoBehaviour {
         string jsonString;
         path = Application.dataPath + "/scripts/gameData.json";
         jsonString = File.ReadAllText (path); 
-        Debug.Log("Game data path :" + path);
+        // Debug.Log("Game data path :" + path);
         DataList gameDatas = JsonUtility.FromJson<DataList> (jsonString);
-        print(gameDatas.GameData.Length);
+        // print(gameDatas.GameData.Length);
         GameData current = gameDatas.GameData[day];
         this.letterText = current.letterText;
         this.yes = current.yes;
@@ -122,7 +122,7 @@ public class GameFlagManager : MonoBehaviour {
     public void debug() {
         ///Print level info in a json format
         string log = JsonUtility.ToJson(this);
-        Debug.Log(log);
+        // Debug.Log(log);
     }
     public void dayPass() {
         ///One day passed, update level info
