@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44f4879c-f8b7-4f4f-8a4e-5fe9897a99a7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/gameData.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/gameData.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/scripts/throwCoin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/throwCoin.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
