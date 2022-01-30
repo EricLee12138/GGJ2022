@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,13 @@ public class throwCoin : MonoBehaviour
 {
     public Sprite coinUp;
     public Sprite coinDown;
+    public GameObject radio;
 
-    // Start is called before the first frame update
+    private void Start() {
+        var playSound = radio.GetComponent<soundManager>();
+        playSound.sndCoin;
+    }
+
     void makeDecision(bool decision){
         if (decision) {
             this.GetComponent<SpriteRenderer>().sprite = coinUp;

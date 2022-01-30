@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44f4879c-f8b7-4f4f-8a4e-5fe9897a99a7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/scripts/GameFlagManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/GameFlagManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scripts/gameData.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/gameData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.globalgamejam2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.globalgamejam2022/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/throwCoin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/throwCoin.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +69,7 @@
       <updated>1643487661475</updated>
       <workItem from="1643487664134" duration="13452000" />
       <workItem from="1643507413301" duration="71000" />
-      <workItem from="1643507555000" duration="19218000" />
+      <workItem from="1643507555000" duration="20017000" />
     </task>
     <servers />
   </component>
