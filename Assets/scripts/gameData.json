@@ -21,6 +21,7 @@
       "choiceA": "I stole from my neighbors field today, it will help nourish my son who's on the battlefield.",
       "choiceB": "I decided not to steal from my neighbors, I can sleep with a sound conscious that my neighbors will have enough food for themselves."
     },
+
     {
       "newsText": "1943 Feb 1st, the weather...",
       "decisionFrom": "radio",
@@ -38,15 +39,16 @@
       ],
       "conditionSpecialEvent": "",
       "conditionRadio": "",
-      "specialEventBody": "wraaaaaaa ",
+      "specialEventBody": "",
       "choiceA": "I took some canned food from the store today, my son will be able have the strength to fight for all of us.",
       "choiceB": "I was at the store but was unable to steal anything for my son, I hope he doesn't starve out there."
     },
+
     {
       "newsText": "1943 Feb 1st, the weather...",
       "decisionFrom": "letter",
       "gameText": "Dear Diary,\n\nI'm thinking of faking an ailment to get access to some medical supplies that my son desperately needs. Should I go to the hospital or not?",
-      "radioText": "Gaaaaaah",
+      "radioText": "",
       "letterText": "Hello mom,\n\nI haven't been feeling well as of late. I've caught something from being stuck in the cold and wet trenches with my worn out boots, but I am resolved to regain my health and keep fighting for you and the rest of our countrymen. \n\nThinking of you often.\nLove, Decker",
       "specialEventFlag": "isHelpNeighbor",
       "yes": [
@@ -57,12 +59,35 @@
         1,
         1
       ],
-      "conditionSpecialEvent": "isStealNeighbor = FALSE",
+      "conditionSpecialEvent": "",
       "conditionRadio": "",
       "specialEventBody": "There's a note from the local hospital ",
       "choiceA": "I went to the hospital and stole some medicine for my son, I'll sleep well knowing he'll recover faster.",
       "choiceB": "I decided not to go to the hospital, it isn't right to take from people who may need it more."
     },
+
+    {
+      "newsText": "1943 Feb 1st, the weather...",
+      "decisionFrom": "special",
+      "gameText": "Should I give them back or keep them?",
+      "radioText": "Police looking for possible thief",
+      "letterText": "",
+      "specialEventFlag": "isCannedFood",
+      "yes": [
+        1,
+        1
+      ],
+      "no": [
+        0,
+        0
+      ],
+      "conditionSpecialEvent": "",
+      "conditionRadio": "isCornSteal = TRUE || isNeighborSteal = TRUE",
+      "specialEventBody": "Dear Diary,\n\nWhile waiting in line at the grocery store today I noticed a pack of cigarettes left in my cart, it made think of my son who may need them since he can't buy them himself.",
+      "choiceA": "I stuffed them in my pocket and sent them to my boy, he'll be so pleased.",
+      "choiceB": "I gave them back to the cashier, she was thankful of my honesty and gave me a coupon for my next time shopping."
+    },
+
     {
       "newsText": "1943 Feb 1st, the weather...",
       "decisionFrom": "letter",
@@ -81,15 +106,16 @@
       "conditionSpecialEvent": "",
       "conditionRadio": "",
       "specialEventBody": "Raining loudly outside ",
-      "choiceA": "I stole the boots off a homeless boy to help my son, it wasn't an easy decision but the boy had passed already so he did not need them but my son does.",
-      "choiceB": "I couldn't go into town today, I didn't want to see my so in those poor boys' faces."
+      "choiceA": "I stole the boots off a homeless boy to help my son, it wasn't easy but the boy had passed already so he didn't need them but my son does.",
+      "choiceB": "I couldn't go into town today, I didn't want to see my son in those poor boys' faces."
     },
+
     {
       "newsText": "1943 Feb 1st, the weather...",
-      "decisionFrom": "letter",
-      "gameText": "I probably should make a decision. ",
-      "radioText": "",
-      "letterText": "Dear Mom, This is the last day",
+      "decisionFrom": "radio",
+      "gameText": "Dear Diary,\n\nI'm trying to decide if I should go to the abbey today and claim an extra blanket for my son or let some other poor soul have them. What should I choose to do?",
+      "radioText": "Hello neighbor, it's starting to get cold out and there are people in need of warm blankets. So send your extras to the Sisterhood of Saint John or drop them off today!",
+      "letterText": "",
       "specialEventFlag": "ishospitalSteal",
       "yes": [
         1,
@@ -101,13 +127,16 @@
       ],
       "conditionSpecialEvent": "",
       "conditionRadio": "",
-      "specialEventBody": "I probably should make a decision. "
+      "specialEventBody": "",
+      "choiceA": "I went to the abbey today and took a blanket that might have helped warm someone in need, but my son need it too.",
+      "choiceB": "I didn't get my son a blanket today, I hope he can weather the cold."
     },
+
     {
       "newsText": "1943 Feb 1st, the weather...",
-      "decisionFrom": "letter",
-      "gameText": "I probably should make a decision. ",
-      "radioText": "Great News",
+      "decisionFrom": "special",
+      "gameText": "I wasn't sure whether to tell him or to take it for my son.",
+      "radioText": "",
       "letterText": "",
       "specialEventFlag": "isHelpColdKid",
       "yes": [
@@ -118,14 +147,17 @@
         0,
         0
       ],
-      "conditionSpecialEvent": "isHelpHobo = TRUE",
+      "conditionSpecialEvent": "",
       "conditionRadio": "",
-      "specialEventBody": "I probably should make a decision. "
+      "specialEventBody": "Dear Diary,\n\nI saw a man drop a book leaving the library today, he didn't seem to notice.",
+      "choiceA": "I didn't tell him, it was just the kind of book my son loves. I'm sure he will be happy!",
+      "choiceB": "I told the man he dropped his book, he was so thankful for my kindness."
     },
+    
     {
       "newsText": "1943 Feb 1st, the weather...",
       "decisionFrom": "letter",
-      "gameText": "I probably should make a decision. ",
+      "gameText": "",
       "radioText": "Kid die on street",
       "letterText": "",
       "specialEventFlag": "isBoots",
@@ -138,46 +170,10 @@
         0
       ],
       "conditionSpecialEvent": "",
-      "conditionRadio": "isHelpColdKid = FALSE",
-      "specialEventBody": "I probably should make a decision. "
-    },
-    {
-      "newsText": "1943 Feb 1st, the weather...",
-      "decisionFrom": "special",
-      "gameText": "I probably should make a decision. ",
-      "radioText": "Police looking for possible thief",
-      "letterText": "",
-      "specialEventFlag": "isCannedFood",
-      "yes": [
-        1,
-        1
-      ],
-      "no": [
-        0,
-        0
-      ],
-      "conditionSpecialEvent": "",
-      "conditionRadio": "isCornSteal = TRUE || isNeighborSteal = TRUE",
-      "specialEventBody": "I probably should make a decision. "
-    },
-    {
-      "newsText": "1943 Feb 1st, the weather...",
-      "decisionFrom": "special",
-      "gameText": "I probably should make a decision. ",
-      "radioText": "",
-      "letterText": "Dear Mom, Thank you",
-      "specialEventFlag": "isBook",
-      "yes": [
-        1,
-        1
-      ],
-      "no": [
-        0,
-        0
-      ],
-      "conditionSpecialEvent": "",
       "conditionRadio": "",
-      "specialEventBody": "I probably should make a decision. "
+      "specialEventBody": "",
+      "choiceA": "I took some canned food from the store today, my son will be able have the strength to fight for all of us.",
+      "choiceB": "I was at the store but was unable to steal anything for my son, I hope he doesn't starve out there."
     }
   ]
 }

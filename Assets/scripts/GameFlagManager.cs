@@ -21,6 +21,8 @@ public class GameData
     public string specialEventFlag; //special event flag
     public string specialEventBody;
     public string decisionFrom;//letter, radio, special
+    public string choiceA;
+    public string choiceB;
 }
 
 [System.Serializable]
@@ -62,6 +64,8 @@ public class GameFlagManager : MonoBehaviour {
         this.decisionFrom = current.decisionFrom;
         this.gameText = current.gameText;
         this.newsText = current.newsText;
+        this.choiceA = current.choiceA;
+        this.choiceB = current.choiceB;
         
         if (current.conditionSpecialEvent != "") {
             if (hasFlag(current.conditionSpecialEvent)) {
@@ -173,4 +177,6 @@ public class GameFlagManager : MonoBehaviour {
     public bool decision = false;
     public string decisionFrom = "special";
     public string newsText = "";
+    public string choiceA = "";
+    public string choiceB = "";
 }

@@ -165,8 +165,8 @@ public class StoryManager : MonoBehaviour
         RadioText = gameFlagManager.radioText;
         LetterText = gameFlagManager.letterText;
         EventText = gameFlagManager.specialEventBody;
-        ChoiceA = "A";      
-        ChoiceB = "B";
+        ChoiceA = gameFlagManager.choiceA;      
+        ChoiceB = gameFlagManager.choiceB;     
         DecisionSource = gameFlagManager.decisionFrom;
         Decision = gameFlagManager.gameText;
 
@@ -274,11 +274,11 @@ public class StoryManager : MonoBehaviour
     public void Choose(bool yes) {
         if (yes)
         {
-            MemoTextHolder.text += '\n' + ChoiceA;
+            MemoTextHolder.text += "\n\n" + ChoiceA;
             Package.SetActive(true);
         } else
         {
-            MemoTextHolder.text += '\n' + ChoiceB;
+            MemoTextHolder.text += "\n\n" + ChoiceB;
         }
         ChoiceATextHolder.gameObject.SetActive(false);
         ChoiceBTextHolder.gameObject.SetActive(false);
