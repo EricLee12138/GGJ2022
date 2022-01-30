@@ -8,15 +8,18 @@ using UnityEditor;
 #endif
 
 [System.Serializable]
-public class GameData {
+public class GameData
+{
+    public string gameText;
     public string radioText;
     public string letterText;
     public int[] yes;
     public int[] no;
     public string conditionSpecialEvent;
     public string conditionRadio;
-    public string specialEventFlag;//special event flag
+    public string specialEventFlag; //special event flag
     public string specialEventBody;
+    public string decisionFrom;//letter, radio, special
 }
 
 [System.Serializable]
@@ -31,9 +34,9 @@ public class GameFlagManager : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetKeyDown(KeyCode.R)) {
             Debug.Log("Pressed primary button.");
-            makeDecision(true);
+            dayPass();
         }
     }
 
@@ -55,7 +58,8 @@ public class GameFlagManager : MonoBehaviour {
         this.letterText = current.letterText;
         this.yes = current.yes;
         this.no = current.no;
-        
+        this.decisionFrom = current.decisionFrom;
+        this.gameText = current.gameText;
         if (current.conditionSpecialEvent != "") {
             if (hasFlag(current.conditionSpecialEvent)) {
                 if (current.specialEventFlag != null) {
@@ -104,7 +108,7 @@ public class GameFlagManager : MonoBehaviour {
     }
 
     //constructor
-    public GameFlagManager(int day, int evilPoint, int sonPoint, int[] yes, int[] no, string radioText, string letterText, string gameText, List<string> gameFlags, string specialEventFlag,string specialEventBody, bool decision) {
+    public GameFlagManager(int day, int evilPoint, int sonPoint, int[] yes, int[] no, string radioText, string letterText, string gameText, List<string> gameFlags, string specialEventFlag,string specialEventBody, bool decision, string decisionFrom) {
         this.day = day;
         this.evilPoint = evilPoint;
         this.sonPoint = sonPoint;
@@ -117,6 +121,7 @@ public class GameFlagManager : MonoBehaviour {
         this.specialEventFlag = specialEventFlag;
         this.specialEventBody = specialEventBody;
         this.decision = decision;
+        this.decisionFrom = decisionFrom;
     }
 
     public void debug() {
@@ -143,4 +148,5 @@ public class GameFlagManager : MonoBehaviour {
     public string specialEventFlag = "";//Flag that will add to gameFlags
     public string specialEventBody = "";//Event text
     public bool decision = false;
+    public string decisionFrom = "special";
 }
