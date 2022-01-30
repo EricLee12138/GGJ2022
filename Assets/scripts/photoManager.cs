@@ -9,10 +9,17 @@ public class photoManager : MonoBehaviour
   public float alpha = 0f;//photo opacity
   public float blurIncrement = 0.02f;
   public GameObject gameManager;
-  private Color colorControl;
+  private SpriteRenderer colorControl;
   public int date = 0;
   private void Start() {
-    colorControl = photoBlur.GetComponent<SpriteRenderer>().color;
+    colorControl = photoBlur.GetComponent<SpriteRenderer>();
+    setAlpha(alpha);
+  }
+
+  private void setAlpha(float _alpha)
+  {    
+    colorControl.color = new Color(colorControl.color.r,colorControl.color.g,colorControl.color.b, _alpha );
+
   }
 
   private void Update() {
@@ -22,7 +29,6 @@ public class photoManager : MonoBehaviour
     
     if (currentDate != date) {
       alpha += blurIncrement;
-      colorControl.a = alpha;
       letterText = gameManager.GetComponent<GameFlagManager>().letterText;
       date = currentDate;
     }
@@ -31,6 +37,6 @@ public class photoManager : MonoBehaviour
     if (isSon) {
       alpha = 0f;
     }
-    
+    setAlpha(alpha);
   }
 }
