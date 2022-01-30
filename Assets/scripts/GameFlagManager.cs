@@ -10,6 +10,7 @@ using UnityEditor;
 [System.Serializable]
 public class GameData
 {
+    public string newsText;//everyday newspaper, do not contain decision
     public string gameText;
     public string radioText;
     public string letterText;
@@ -60,6 +61,7 @@ public class GameFlagManager : MonoBehaviour {
         this.no = current.no;
         this.decisionFrom = current.decisionFrom;
         this.gameText = current.gameText;
+        this.newsText = current.newsText;
         
         if (current.conditionSpecialEvent != "") {
             if (hasFlag(current.conditionSpecialEvent)) {
@@ -128,7 +130,7 @@ public class GameFlagManager : MonoBehaviour {
     }
 
     //constructor
-    public GameFlagManager(int day, int evilPoint, int sonPoint, int[] yes, int[] no, string radioText, string letterText, string gameText, List<string> gameFlags, string specialEventFlag,string specialEventBody, bool decision, string decisionFrom) {
+    public GameFlagManager(int day, int evilPoint, int sonPoint, int[] yes, int[] no, string radioText, string letterText, string gameText, List<string> gameFlags, string specialEventFlag,string specialEventBody, bool decision, string decisionFrom, string newsText) {
         this.day = day;
         this.evilPoint = evilPoint;
         this.sonPoint = sonPoint;
@@ -142,6 +144,7 @@ public class GameFlagManager : MonoBehaviour {
         this.specialEventBody = specialEventBody;
         this.decision = decision;
         this.decisionFrom = decisionFrom;
+        this.newsText = newsText;
     }
 
     public void debug() {
@@ -169,4 +172,5 @@ public class GameFlagManager : MonoBehaviour {
     public string specialEventBody = "";//Event text
     public bool decision = false;
     public string decisionFrom = "special";
+    public string newsText = "1943 Feb 1st, the weather...";
 }

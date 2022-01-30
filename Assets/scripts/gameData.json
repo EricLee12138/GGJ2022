@@ -1,6 +1,7 @@
 {
   "GameData":[
 {
+  "newsText" : "1943 Feb 1st, the weather...",
   "decisionFrom": "radio",
   "gameText": "I probably should make a decision. ",
   "radioText": "radio",
@@ -12,7 +13,7 @@
   "conditionRadio": "",
   "specialEventBody": ""
 },
-{  
+{  "newsText" : "1943 Feb 1st, the weather...",
   "decisionFrom": "radio",
   "gameText": "I probably should make a decision. ",
   "radioText": "Great News",
@@ -24,7 +25,8 @@
 "conditionRadio": "", 
   "specialEventBody": "wraaaaaaa "
 },
-{  "decisionFrom": "letter",
+{ "newsText" : "1943 Feb 1st, the weather...",
+  "decisionFrom": "letter",
   "gameText": "I probably should make a decision. ",
   "radioText": "Gaaaaaah",
 "letterText": "Dear Mom, Thank you",
@@ -35,7 +37,8 @@
 "conditionRadio": "",
   "specialEventBody": "There's a note from the local hospital "
 },
-{"decisionFrom": "letter",
+{"newsText" : "1943 Feb 1st, the weather...",
+  "decisionFrom": "letter",
   "gameText": "I probably should make a decision. ",
   "radioText": "",
 "letterText": "Dear Mom, I'll be back soon!",
@@ -46,7 +49,8 @@
 "conditionRadio": "",
   "specialEventBody": "Raining loudly outside "
 },
-{"decisionFrom": "letter",
+{"newsText" : "1943 Feb 1st, the weather...",
+  "decisionFrom": "letter",
   "gameText": "I probably should make a decision. ",
   "radioText": "",
 "letterText": "Dear Mom, This is the last day",
@@ -57,7 +61,8 @@
 "conditionRadio": "",
   "specialEventBody": "I probably should make a decision. "
 },
-{"decisionFrom": "letter",
+{"newsText" : "1943 Feb 1st, the weather...",
+  "decisionFrom": "letter",
   "gameText": "I probably should make a decision. ",
   "radioText": "Great News",
 "letterText": "",
@@ -68,7 +73,8 @@
 "conditionRadio": "",
   "specialEventBody": "I probably should make a decision. "
 },
-{"decisionFrom": "letter",
+{"newsText" : "1943 Feb 1st, the weather...",
+  "decisionFrom": "letter",
   "gameText": "I probably should make a decision. ",
   "radioText": "Kid die on street",
 "letterText": "",
@@ -79,7 +85,8 @@
 "conditionRadio": "isHelpColdKid = FALSE",
   "specialEventBody": "I probably should make a decision. "
 },
-{"decisionFrom": "special",
+{"newsText" : "1943 Feb 1st, the weather...",
+  "decisionFrom": "special",
   "gameText": "I probably should make a decision. ",
   "radioText": "Police looking for possible thief",
 "letterText": "",
@@ -90,7 +97,8 @@
 "conditionRadio": "isCornSteal = TRUE || isNeighborSteal = TRUE",
   "specialEventBody": "I probably should make a decision. "
 },
-{"decisionFrom": "special",
+{"newsText" : "1943 Feb 1st, the weather...",
+  "decisionFrom": "special",
   "gameText": "I probably should make a decision. ",
   "radioText": "",
 "letterText": "Dear Mom, Thank you",
