@@ -61,9 +61,9 @@ public class StoryManager : MonoBehaviour
     [SerializeField]
     GameObject EndingComment;
     [SerializeField]
-    GameObject EndingLetterText;
+    TMP_Text EndingLetterText;
     [SerializeField]
-    GameObject EndingCommentText;
+    TMP_Text EndingCommentText;
 
     [SerializeField]
     throwCoin coin;
@@ -154,6 +154,9 @@ public class StoryManager : MonoBehaviour
         EndingComment.GetComponent<Animator>().SetTrigger("FadeIn");
         EndingLetterText.GetComponent<Animator>().SetTrigger("FadeIn");
         EndingCommentText.GetComponent<Animator>().SetTrigger("FadeIn");
+
+        EndingLetterText.text = GetComponent<endingBranch>().getSonText();
+        EndingCommentText.text = GetComponent<endingBranch>().getNeighborText();
     }
 
     public void StartToday()
