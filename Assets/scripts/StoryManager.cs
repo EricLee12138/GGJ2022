@@ -8,11 +8,11 @@ using TMPro;
 public class StoryManager : MonoBehaviour
 {
     [SerializeField]
+    GameObject FirstPlayMask;
+    [SerializeField]
     GameObject NewspaperMask;
     [SerializeField]
     GameObject NewspaperBg;
-    [SerializeField]    
-    GameObject NewspaperClip;
 
     [SerializeField]
     TMP_Text DateHolder;
@@ -26,11 +26,36 @@ public class StoryManager : MonoBehaviour
     TMP_Text ChoiceBTextHolder;
     [SerializeField]
     TMP_Text RadioTextHolder;
+    [SerializeField]
+    TMP_Text HelpTextHolder;
 
     [SerializeField]
     GameObject RadioTextBg;
     [SerializeField]
     GameObject Letter;
+    [SerializeField]
+    GameObject EnvelopeA;
+    [SerializeField]
+    GameObject EnvelopeB;
+    [SerializeField]
+    GameObject EnvelopeOpen;
+
+    [SerializeField]
+    GameObject EndingObj;
+    [SerializeField]
+    GameObject EndingMask;
+    [SerializeField]
+    GameObject EndingEnvelope;
+    [SerializeField]
+    GameObject EndingEnvelopeOpen;
+    [SerializeField]
+    GameObject EndingLetter;
+    [SerializeField]
+    GameObject EndingComment;
+    [SerializeField]
+    GameObject EndingLetterText;
+    [SerializeField]
+    GameObject EndingCommentText;
 
     public int DayPassed = -1;
 
@@ -61,35 +86,74 @@ public class StoryManager : MonoBehaviour
         gameFlagManager = GetComponent<GameFlagManager>();
         Debug.Assert(MemoTextHolder != null);
         Debug.Assert(LetterTextHolder != null);
+        DayPassed = -1;
+        SpecialEventHappened = true;
+        SpecialEventDone = true;
         EndToday();
     }
 
     public void EndToday()
     {
-        // if (SpecialEventHappened && !SpecialEventDone) // Special event not done, can't end today
-        // {
-        //     DeclineEndToday();
-        //     return;
-        // }
+        if (!SpecialEventHappened || !SpecialEventDone) // Special event not done, can't end today
+        {
+            DeclineEndToday();
+            return;
+        }
+
 
         // End today
         cameraMovement.DisableMovement();
-        gameFlagManager.dayPass();
+        if (DayPassed != -1)
+        {
+            gameFlagManager.dayPass();
+        } 
+        
+        if (DayPassed == 0)
+        {
+            // Ending
+            EndGame();
+            return;
+        }
+
         NewspaperMask.SetActive(true);
         NewspaperMask.GetComponent<Animator>().SetTrigger("FadeIn");
         NewspaperBg.GetComponent<Animator>().SetTrigger("FadeIn");
-        NewspaperClip.GetComponent<Animator>().SetTrigger("FadeIn");
+    }
+
+    public void EndGame()
+    {
+        EndingObj.SetActive(true);
+        EndingMask.GetComponent<Animator>().SetTrigger("FadeIn");
+        EndingEnvelope.GetComponent<Animator>().SetTrigger("FadeIn");
+        EndingEnvelopeOpen.GetComponent<Animator>().SetTrigger("FadeIn");
+        EndingLetter.GetComponent<Animator>().SetTrigger("FadeIn");
+        EndingComment.GetComponent<Animator>().SetTrigger("FadeIn");
+        EndingLetterText.GetComponent<Animator>().SetTrigger("FadeIn");
+        EndingCommentText.GetComponent<Animator>().SetTrigger("FadeIn");
     }
 
     public void StartToday()
     {
+        EnvelopeA.gameObject.SetActive(false);
+        EnvelopeB.gameObject.SetActive(false);
+        EnvelopeOpen.gameObject.SetActive(false);
+        Letter.SetActive(false);
+        LetterTextHolder.gameObject.SetActive(false);
+        ShowNothingHelp();
+
+        if (DayPassed == -1)
+        {
+            FirstPlayMask.GetComponent<Animator>().SetTrigger("FadeOut");
+            StartCoroutine(WaitUntilAnimationIsName(FirstPlayMask, "FadeOut"));
+        }
+
         // Read data from GameFlagManager
         DayPassed = gameFlagManager.day; // D
         EvilPoint = gameFlagManager.evilPoint;
         SonPoint = gameFlagManager.sonPoint;
         Yes = gameFlagManager.yes;
         No = gameFlagManager.no;
-        SpecialEventHappened = gameFlagManager.specialEventBody.Length > 0;
+        SpecialEventHappened = gameFlagManager.decisionFrom == "special";
         SpecialEventDone = false;
         RadioText = gameFlagManager.radioText;
         LetterText = gameFlagManager.letterText;
@@ -106,7 +170,14 @@ public class StoryManager : MonoBehaviour
         ChoiceBTextHolder.text = ChoiceB;
         RadioTextHolder.text =  RadioText;
 
-        if (DecisionSource == "letter" || DecisionSource == "radio")
+        if (DecisionSource == "letter")
+        {
+            EnvelopeA.gameObject.SetActive(true);
+            EnvelopeB.gameObject.SetActive(true);
+            MemoTextHolder.gameObject.SetActive(false);
+            ChoiceATextHolder.gameObject.SetActive(false);
+            ChoiceBTextHolder.gameObject.SetActive(false);
+        } else if(DecisionSource == "radio")
         {
             MemoTextHolder.gameObject.SetActive(false);
             ChoiceATextHolder.gameObject.SetActive(false);
@@ -122,32 +193,30 @@ public class StoryManager : MonoBehaviour
 
         NewspaperMask.GetComponent<Animator>().SetTrigger("FadeOut");
         NewspaperBg.GetComponent<Animator>().SetTrigger("FadeOut");
-        NewspaperClip.GetComponent<Animator>().SetTrigger("FadeOut");
 
-        StartCoroutine(WaitUntilAnimationDone(NewspaperMask));
+        StartCoroutine(WaitUntilAnimationIsName(NewspaperMask, "Idle"));
     }
 
-    IEnumerator WaitUntilAnimationDone(GameObject obj)
+    IEnumerator WaitUntilAnimationIsName(GameObject obj, string name)
     {
-        yield return new WaitUntil(() => obj.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Idle"));
+        yield return new WaitUntil(() => obj.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1 && obj.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName(name));
         obj.SetActive(false);
         cameraMovement.EnableMovement();
     }
 
     public void ListenToRadio()
     {
-        if (RadioText.Length <= 0) return;
+        if (RadioText.Length <= 0) 
+        {
+            ShowRadioHelp();
+            return;
+        }
         print("radio");
+        SpecialEventHappened = true;
         RadioTextBg.SetActive(true);
         RadioTextBg.GetComponent<Animator>().SetTrigger("FadeIn");
         RadioTextHolder.GetComponent<Animator>().SetTrigger("FadeIn");
         StartCoroutine(WaitForSeconds(5f));
-        if (DecisionSource == "radio")
-        {
-            MemoTextHolder.gameObject.SetActive(true);
-            ChoiceATextHolder.gameObject.SetActive(true);
-            ChoiceBTextHolder.gameObject.SetActive(true);
-        }
     }
 
     IEnumerator WaitForSeconds(float seconds)
@@ -155,14 +224,25 @@ public class StoryManager : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         RadioTextBg.GetComponent<Animator>().SetTrigger("FadeOut");
         RadioTextHolder.GetComponent<Animator>().SetTrigger("FadeOut");
-        StartCoroutine(WaitUntilAnimationDone(RadioTextBg));
+        if (DecisionSource == "radio")
+        {
+            MemoTextHolder.gameObject.SetActive(true);
+            ChoiceATextHolder.gameObject.SetActive(true);
+            ChoiceBTextHolder.gameObject.SetActive(true);
+        }
+
+        StartCoroutine(WaitUntilAnimationIsName(RadioTextBg, "Idle"));
     }
 
     public void ReadLetter()
     {
         if (LetterText.Length <= 0) return;
         print("letter");
+        SpecialEventHappened = true;
+        EnvelopeB.SetActive(false);
+        EnvelopeOpen.SetActive(true);
         Letter.SetActive(true);
+        LetterTextHolder.gameObject.SetActive(true);
         if (DecisionSource == "letter")
         {
             MemoTextHolder.gameObject.SetActive(true);
@@ -171,8 +251,49 @@ public class StoryManager : MonoBehaviour
         }
     }
 
+    public void Choose(bool yes) {
+        if (yes)
+        {
+            Decision += '\n' + ChoiceA;
+        } else
+        {
+            Decision += '\n' + ChoiceB;
+        }
+        MemoTextHolder.text = Decision;
+        ChoiceATextHolder.gameObject.SetActive(false);
+        ChoiceBTextHolder.gameObject.SetActive(false);
+        SpecialEventDone = true;
+    }
+
+    public void ShowRadioHelp()
+    {
+        HelpTextHolder.text = "This is my son's old radio. I'm glad it still works...";
+    }
+
+    public void ShowPackageHelp()
+    {
+        HelpTextHolder.text = "Should I just send it...";
+    }
+
+    public void ShowDeclineHelp()
+    {
+        if (!SpecialEventHappened)
+        {
+            HelpTextHolder.text = "I'm worried about him...";
+        } else
+        {
+            HelpTextHolder.text = "It's tough but I need to decide...";
+        }
+    }
+
+    public void ShowNothingHelp()
+    {
+        HelpTextHolder.text = "...";
+    }
+
     void DeclineEndToday()
     {
+        ShowDeclineHelp();
         Debug.LogFormat("You still haven't made your decision");
     }
 
