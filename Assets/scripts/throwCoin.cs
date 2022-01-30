@@ -22,9 +22,15 @@ public class throwCoin : MonoBehaviour
     private void Update() {
         if (Input.GetKeyDown(KeyCode.S)) {
             Debug.Log("Spinning");
-            StartCoroutine(makeDecision());
+            Decide();
         }
     }
+
+    public void Decide(bool decision = false)
+    {
+        StartCoroutine(makeDecision(decision));
+    }
+
     IEnumerator makeDecision(bool decision = false)
     {
         this.GetComponent<SpriteRenderer>().sprite = coinFlip;

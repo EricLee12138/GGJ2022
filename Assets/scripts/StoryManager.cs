@@ -61,6 +61,9 @@ public class StoryManager : MonoBehaviour
     [SerializeField]
     GameObject EndingCommentText;
 
+    [SerializeField]
+    throwCoin coin;
+
     public int DayPassed = -1;
 
     public int EvilPoint = 0;
@@ -289,6 +292,7 @@ public class StoryManager : MonoBehaviour
         ChoiceATextHolder.gameObject.SetActive(false);
         ChoiceBTextHolder.gameObject.SetActive(false);
         SpecialEventDone = true;
+        coin.Decide(yes);
         gameFlagManager.makeDecision(yes);
     }
 
