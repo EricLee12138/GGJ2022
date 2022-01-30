@@ -79,12 +79,16 @@ public class StoryManager : MonoBehaviour
     public string LetterText = "Dear mom";
     public string EventText = "Today I met...";
 
+    public GameObject radio;
+    private soundManager _soundManager;
+
     CameraMovement cameraMovement;
     GameFlagManager gameFlagManager;
     
     void Start()
     {
         Cursor.visible = false;
+        _soundManager = radio.GetComponent<soundManager>();
         cameraMovement = GetComponent<CameraMovement>();
         gameFlagManager = GetComponent<GameFlagManager>();
         Debug.Assert(MemoTextHolder != null);
@@ -108,12 +112,14 @@ public class StoryManager : MonoBehaviour
         cameraMovement.DisableMovement();
         if (DayPassed != -1)
         {
+            _soundManager.playNewsSound();
             gameFlagManager.dayPass();
         } 
         
         if (DayPassed == 8)
         {
             // Ending
+            _soundManager.playEnding();
             EndGame();
             return;
         }
