@@ -267,9 +267,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 795249110202229366, guid: e0b1254226028409db5474ace3958da7, type: 3}
+      propertyPath: radio
+      value: 
+      objectReference: {fileID: 1599102386}
+    - target: {fileID: 795249110202229366, guid: e0b1254226028409db5474ace3958da7, type: 3}
+      propertyPath: coinFlip
+      value: 
+      objectReference: {fileID: 21300000, guid: 54f2911669fd5431085e8b44108ea745, type: 3}
     - target: {fileID: 795249110202229367, guid: e0b1254226028409db5474ace3958da7, type: 3}
       propertyPath: m_Name
       value: decisionCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008268756676026239, guid: e0b1254226028409db5474ace3958da7, type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 6cc09e97ceb4948f9aa31ac8f33276eb, type: 2}
+    - target: {fileID: 3008268756676026239, guid: e0b1254226028409db5474ace3958da7, type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0b1254226028409db5474ace3958da7, type: 3}
@@ -395,9 +411,10 @@ MonoBehaviour:
   gameText: 'I probably should make a decision. '
   gameFlags: []
   specialEventFlag: isCornSteal
-  specialEventBody: 'I probably should make a decision. '
+  specialEventBody: ' '
   decision: 0
   decisionFrom: radio
+  newsText: 
 --- !u!4 &1430480972
 Transform:
   m_ObjectHideFlags: 0
@@ -412,6 +429,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1599102386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5737689595313751711, guid: f573fa94952ad4446bac06c63eb9d551, type: 3}
+  m_PrefabInstance: {fileID: 7164027026723132446}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1661422106445923598
 PrefabInstance:
   m_ObjectHideFlags: 0
