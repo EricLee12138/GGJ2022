@@ -155,6 +155,7 @@ public class StoryManager : MonoBehaviour
         Package.SetActive(false);
         Letter.SetActive(false);
         LetterTextHolder.gameObject.SetActive(false);
+        coin.transform.position = new Vector3(1000f, 1000f, 0f);
         ShowNothingHelp();
 
         if (DayPassed == -1)
