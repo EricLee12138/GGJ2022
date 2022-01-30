@@ -60,28 +60,48 @@ public class GameFlagManager : MonoBehaviour {
         this.no = current.no;
         this.decisionFrom = current.decisionFrom;
         this.gameText = current.gameText;
+        
         if (current.conditionSpecialEvent != "") {
             if (hasFlag(current.conditionSpecialEvent)) {
-                if (current.specialEventFlag != null) {
+                if (current.specialEventFlag != "") {
                     this.specialEventFlag = current.specialEventFlag;
+                    this.specialEventBody = current.specialEventBody;
                 }
-                this.specialEventBody = current.specialEventBody;
+                else {
+                    this.specialEventFlag = "";
+                    this.specialEventBody = "";
+                }
+
             }
         }
         else if (current.specialEventBody != "") {
-            if (current.specialEventFlag != null) {
+            if (current.specialEventFlag != "") {
                 this.specialEventFlag = current.specialEventFlag;
-            }            
-            this.specialEventBody = current.specialEventBody;
+                this.specialEventBody = current.specialEventBody;
+            }
+            else {
+                this.specialEventFlag = "";
+                this.specialEventBody = "";
+            }
+        }
+        else {
+            this.specialEventFlag = "";
+            this.specialEventBody = "";
         }
 
         if (current.conditionRadio != "") {
             if (hasFlag(current.conditionRadio)) {
                 this.radioText = current.radioText;
             }
+            else {
+                this.radioText = "";
+            }
         }
         else if (current.radioText != "") {
             this.radioText = current.radioText;
+        }
+        else {
+            this.radioText = "";
         }
 
         this.debug();

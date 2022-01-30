@@ -22,7 +22,7 @@
 "no": [0,1],
 "conditionSpecialEvent": "",
 "conditionRadio": "", 
-  "specialEventBody": "I probably should make a decision. "
+  "specialEventBody": "wraaaaaaa "
 },
 {  "decisionFrom": "letter",
   "gameText": "I probably should make a decision. ",
@@ -33,7 +33,7 @@
 "no": [1,1],
 "conditionSpecialEvent": "isStealNeighbor = FALSE",
 "conditionRadio": "",
-  "specialEventBody": "I probably should make a decision. "
+  "specialEventBody": "There's a note from the local hospital "
 },
 {"decisionFrom": "letter",
   "gameText": "I probably should make a decision. ",
@@ -44,7 +44,7 @@
 "no": [1,1],
 "conditionSpecialEvent": "",
 "conditionRadio": "",
-  "specialEventBody": "I probably should make a decision. "
+  "specialEventBody": "Raining loudly outside "
 },
 {"decisionFrom": "letter",
   "gameText": "I probably should make a decision. ",
