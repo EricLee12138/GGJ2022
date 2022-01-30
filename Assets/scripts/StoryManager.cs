@@ -121,12 +121,18 @@ public class StoryManager : MonoBehaviour
 
         // End today
         cameraMovement.DisableMovement();
-        if (DayPassed != -1)
+        if (DayPassed != -1 && DayPassed != 7)
         {
             _soundManager.playNewsSound();
             gameFlagManager.dayPass();
             NewsTitle = gameFlagManager.newsTitle;
             NewsText = gameFlagManager.newsText;
+
+            
+        } else if (DayPassed == 7)
+        {
+            NewsTitle = "End of War in Sight";
+            NewsText = "The war may soon come to an end as talks of peace treaties are being held between our leaders. Even though we lost many of our soldiers, we hope for the safe return of our fearless troops on the front lines. Well done boys! ";
         } else
         {
             NewsTitle = "War Looms as Tensions Rise";
@@ -146,6 +152,7 @@ public class StoryManager : MonoBehaviour
 
     public void EndGame()
     {
+        cameraMovement.DisableMovement();
         EndingObj.SetActive(true);
         EndingMask.GetComponent<Animator>().SetTrigger("FadeIn");
         EndingEnvelope.GetComponent<Animator>().SetTrigger("FadeIn");
@@ -161,7 +168,7 @@ public class StoryManager : MonoBehaviour
 
     public void StartToday()
     {
-        if (DayPassed == 6)
+        if (DayPassed == 1)
         {
             print("end");
             // Ending
