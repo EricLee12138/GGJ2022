@@ -1,6 +1,8 @@
 {
   "GameData":[
 {
+  "decisionFrom": "radio",
+  "gameText": "I probably should make a decision. ",
   "radioText": "",
   "letterText": "Good Bye",
   "specialEventFlag": "isCornSteal",
@@ -8,10 +10,12 @@
   "no": [0,1],
   "conditionSpecialEvent": "",
   "conditionRadio": "",
-  "specialEventBody": "I probably should make a decision. "
+  "specialEventBody": ""
 },
-{
-"radioText": "Great News",
+{  
+  "decisionFrom": "radio",
+  "gameText": "I probably should make a decision. ",
+  "radioText": "Great News",
 "letterText": "",
 "specialEventFlag": "isNeighborSteal",
 "yes": [1,1],
@@ -20,8 +24,9 @@
 "conditionRadio": "", 
   "specialEventBody": "I probably should make a decision. "
 },
-{
-"radioText": "Gaaaaaah",
+{  "decisionFrom": "letter",
+  "gameText": "I probably should make a decision. ",
+  "radioText": "Gaaaaaah",
 "letterText": "Dear Mom, Thank you",
 "specialEventFlag": "isHelpNeighbor",
 "yes": [-1,0],
@@ -30,8 +35,9 @@
 "conditionRadio": "",
   "specialEventBody": "I probably should make a decision. "
 },
-{
-"radioText": "",
+{"decisionFrom": "letter",
+  "gameText": "I probably should make a decision. ",
+  "radioText": "",
 "letterText": "Dear Mom, I'll be back soon!",
 "specialEventFlag": "isHelpHobo",
 "yes": [-1,0],
@@ -40,8 +46,9 @@
 "conditionRadio": "",
   "specialEventBody": "I probably should make a decision. "
 },
-{
-"radioText": "",
+{"decisionFrom": "letter",
+  "gameText": "I probably should make a decision. ",
+  "radioText": "",
 "letterText": "Dear Mom, This is the last day",
 "specialEventFlag": "ishospitalSteal",
 "yes": [1,2],
@@ -50,8 +57,9 @@
 "conditionRadio": "",
   "specialEventBody": "I probably should make a decision. "
 },
-{
-"radioText": "Great News",
+{"decisionFrom": "letter",
+  "gameText": "I probably should make a decision. ",
+  "radioText": "Great News",
 "letterText": "",
 "specialEventFlag": "isHelpColdKid",
 "yes": [-1,0],
@@ -60,8 +68,9 @@
 "conditionRadio": "",
   "specialEventBody": "I probably should make a decision. "
 },
-{
-"radioText": "Kid die on street",
+{"decisionFrom": "letter",
+  "gameText": "I probably should make a decision. ",
+  "radioText": "Kid die on street",
 "letterText": "",
 "specialEventFlag": "isBoots",
 "yes": [1,1],
@@ -70,8 +79,9 @@
 "conditionRadio": "isHelpColdKid = FALSE",
   "specialEventBody": "I probably should make a decision. "
 },
-{
-"radioText": "Police looking for possible thief",
+{"decisionFrom": "special",
+  "gameText": "I probably should make a decision. ",
+  "radioText": "Police looking for possible thief",
 "letterText": "",
 "specialEventFlag": "isCannedFood",
 "yes": [1,1],
@@ -80,8 +90,9 @@
 "conditionRadio": "isCornSteal = TRUE || isNeighborSteal = TRUE",
   "specialEventBody": "I probably should make a decision. "
 },
-{
-"radioText": "",
+{"decisionFrom": "special",
+  "gameText": "I probably should make a decision. ",
+  "radioText": "",
 "letterText": "Dear Mom, Thank you",
 "specialEventFlag": "isBook",
 "yes": [1,1],
