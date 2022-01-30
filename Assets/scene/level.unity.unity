@@ -331,11 +331,14 @@ MonoBehaviour:
   day: 0
   evilPoint: 0
   sonPoint: 0
+  yes: 0100000002000000
+  no: 0000000001000000
   radioText: 
-  letterText: 
+  letterText: Good Bye
   gameText: 
   gameFlags: []
-  specialEvent: 
+  specialEventFlag: isCornSteal
+  specialEventBody: 'I probably should make a decision. '
   decision: 0
 --- !u!4 &1430480972
 Transform:
@@ -351,3 +354,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7164027026723132446
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7164027026051620388, guid: f573fa94952ad4446bac06c63eb9d551, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164027026051620388, guid: f573fa94952ad4446bac06c63eb9d551, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.042644024
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164027026051620388, guid: f573fa94952ad4446bac06c63eb9d551, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7889126
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164027026051620388, guid: f573fa94952ad4446bac06c63eb9d551, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164027026051620388, guid: f573fa94952ad4446bac06c63eb9d551, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164027026051620388, guid: f573fa94952ad4446bac06c63eb9d551, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164027026051620388, guid: f573fa94952ad4446bac06c63eb9d551, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164027026051620388, guid: f573fa94952ad4446bac06c63eb9d551, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164027026051620388, guid: f573fa94952ad4446bac06c63eb9d551, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164027026051620388, guid: f573fa94952ad4446bac06c63eb9d551, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164027026051620388, guid: f573fa94952ad4446bac06c63eb9d551, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164027026051620393, guid: f573fa94952ad4446bac06c63eb9d551, type: 3}
+      propertyPath: m_Name
+      value: radio
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f573fa94952ad4446bac06c63eb9d551, type: 3}

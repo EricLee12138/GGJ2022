@@ -7,7 +7,8 @@ using Random = System.Random;
 
 public class soundManager : MonoBehaviour
 {
-
+    public float lerpDuration = 3f;
+    public GameObject knob;
     public AudioClip sndClick;
     public AudioClip sndCoin;
     public AudioClip[] radioClips;
@@ -29,7 +30,7 @@ public class soundManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) {
             Debug.Log("Pressed primary button.");
             audio.clip = sndClick;
-            playRadio();
+            playSound();
         }
     }
 
@@ -38,11 +39,29 @@ public class soundManager : MonoBehaviour
         playSound();
     }
 
-    public IEnumerator playRadio() {
+    public float timeElapsed = 0;
+    public float knobRotation;
+    private void FixedUpdate()
+    {
+        //TODO: fix rotation start
+        timeElapsed += Time.deltaTime;
+        float z = knob.transform.rotation.z;
+        knob.transform.localRotation = Quaternion.Euler(0,0,Mathf.Lerp( z,knobRotation, timeElapsed / lerpDuration));
+        print(z);
+    }
+
+    public void playRadio() {
+        StartCoroutine(radio());
+    }
+
+    private IEnumerator radio()
+    {
+        yield return new WaitForSeconds(0.5f);
+        timeElapsed = 0;
         int radioFM = UnityEngine.Random.Range(0,radioClips.Length);
+        knobRotation = UnityEngine.Random.Range(-50f, 50f);
         audio.clip = radioClips[radioFM];
-        audio.PlayOneShot(audio.clip);
-        yield return new WaitForSeconds(3f);
+        audio.Play();
     }
 
     public void playSound() {
