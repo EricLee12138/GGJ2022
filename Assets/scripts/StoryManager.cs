@@ -82,6 +82,7 @@ public class StoryManager : MonoBehaviour
     
     void Start()
     {
+        Cursor.visible = false;
         cameraMovement = GetComponent<CameraMovement>();
         gameFlagManager = GetComponent<GameFlagManager>();
         Debug.Assert(MemoTextHolder != null);
@@ -108,7 +109,7 @@ public class StoryManager : MonoBehaviour
             gameFlagManager.dayPass();
         } 
         
-        if (DayPassed == 0)
+        if (DayPassed == 8)
         {
             // Ending
             EndGame();
