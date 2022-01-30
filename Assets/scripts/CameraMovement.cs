@@ -65,4 +65,9 @@ public class CameraMovement : MonoBehaviour
         targetPosition.y = 0;
         targetPosition.z = mainCamera.transform.position.z;
     }
+
+    public void EnableMovement()
+    {
+        disabled = false;
+    }
 }
