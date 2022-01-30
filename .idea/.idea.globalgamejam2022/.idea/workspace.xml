@@ -6,12 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="44f4879c-f8b7-4f4f-8a4e-5fe9897a99a7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.globalgamejam2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.globalgamejam2022/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scene/level.unity.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scene/level.unity.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/scripts/GameFlagManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/GameFlagManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/scripts/gameData.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/gameData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +35,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -68,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1643487661475</updated>
-      <workItem from="1643487664134" duration="4011000" />
+      <workItem from="1643487664134" duration="13258000" />
     </task>
     <servers />
   </component>
