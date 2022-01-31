@@ -11,9 +11,9 @@ public class endingBranch : MonoBehaviour
     public int evilPointPass = 5;//if greater than evilPointPass you are a$$hole
     
     public GameFlagManager gameFlagManager;
-    public string sonText;
-    public string neighborText;
-    public List<EndingBranch> endingBranches;
+    public string sonText = "";
+    public string neighborText = "";
+    public List<EndingBranch> endingBranches = new List<EndingBranch>();
 
     public struct EndingBranch {
         public string gameFlag;
@@ -44,12 +44,8 @@ public class endingBranch : MonoBehaviour
         }
     };
 
-    private void Start()
+    private void endSum()
     {
-       endingBranches = new List<EndingBranch>();
-    }
-
-    private void endSum() {
         // Son
         endingBranches.Add(new EndingBranch(
             "isCornSteal",
@@ -154,42 +150,29 @@ public class endingBranch : MonoBehaviour
             if (branch.isFromSon) {
                 //Debug.Log(endingBranch.evilText+endingBranch.goodText);
                 branch.setBranchBody(gameFlagManager.sonPoint > sonPointPass ? branch.goodText : branch.evilText);
+                if (gameFlagManager.hasFlag(branch.gameFlag)) {
+                    sonText += branch.body;
+                    sonText += "\n";
+                }
             }
             else {
                 branch.setBranchBody(gameFlagManager.evilPoint > evilPointPass ? branch.evilText : branch.goodText);
+                if (!gameFlagManager.hasFlag(branch.gameFlag)) {
+                    neighborText += branch.body;
+                    neighborText += "\n";
+                }
             }
+
+
         }
     }
     
     public string getSonText() {
         endSum();
-        string _sonText = "";
-        foreach (var branch in endingBranches) {
-            branch.Debug();
-            if (branch.isFromSon == true) {
-                if (gameFlagManager.hasFlag(branch.gameFlag)) {
-                    _sonText += branch.body;
-                    _sonText += "\n";
-                }
-            }
-        }
-        
-        sonText = _sonText;
-        return _sonText;
+        return sonText;
     }
 
     public string getNeighborText() {        
-        string _neighborText = "";
-        foreach (var branch in endingBranches) {
-            if (branch.isFromSon == false) {
-                if (!gameFlagManager.hasFlag(branch.gameFlag)) {
-                    _neighborText += branch.body;
-                    _neighborText += "\n";
-                }
-            }
-        }
-        
-        neighborText = _neighborText;
-        return _neighborText;
+        return neighborText;
     }
 }
