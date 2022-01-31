@@ -1,0 +1,187 @@
+{
+  "GameData": [
+    {
+      "newsTitle": "War Looms as Tensions Rise",
+      "newsText": "War has broken out on the peninsula! The government has ordered all men of age to aid in our war against tyranny and cruelty. We are sending our boys to war but they will come back as heroes. ",
+      "decisionFrom": "letter",
+      "gameText": "Dear Diary,\n\nI'm fighting over the decision to steal from my neighbors since they had such a great harvest this season. What should I do? ",
+      "radioText": "Help your men at battle! Send a taste of home with what ever food you can to our boys on the front lines and remind them what they're fighting for!",
+      "letterText": "Howdy Delores,\n\nHope all is well with you and your boy, Decker. He's fighting the good fight for all of us. Did you get to plant anything without his help?\nWe just had a great season with our garden. I think we'll have just enough to get us through this summer.\n\nThinking of you,\nThe Fishers",
+      "specialEventFlag": "isCornSteal",
+      "yes": [
+        1,
+        1
+      ],
+      "no": [
+        0,
+        0
+      ],
+      "conditionSpecialEvent": "",
+      "conditionRadio": "",
+      "specialEventBody": "",
+      "choiceA": "I stole from my neighbors field today, it will help nourish my son who's on the battlefield.",
+      "choiceB": "I decided not to steal from my neighbors, I can sleep with a sound conscious that my neighbors will have enough food for themselves."
+    },
+
+    {
+      "newsTitle": "Food Shortage for Our Men at Arms",
+      "newsText": "As our men go to battle, we need to fill their bellies so they can fight our enemies. The government asks for your help in sending everything you can to our boys in battle.",
+      "decisionFrom": "radio",
+      "gameText": "Dear Diary,\n\nI'm only able to make enough to barely feed myself but I know my boy is hungry out on the front lines. I'd hate to see him starve or get injured or worse from lack of nourishment. Is it right to steal from a family store to feed my son?",
+      "radioText": "Hello there neighbor, stop by Johnson's Family Store where we just stocked up on all your canned good needs. And don't forget to try our new family recipe baked goods, it's like shopping at our home! Hope to see you there!",
+      "letterText": "",
+      "specialEventFlag": "isNeighborSteal",
+      "yes": [
+        1,
+        1
+      ],
+      "no": [
+        0,
+        0
+      ],
+      "conditionSpecialEvent": "",
+      "conditionRadio": "",
+      "specialEventBody": "",
+      "choiceA": "I took some canned food from the store today, my son will be able have the strength to fight for all of us.",
+      "choiceB": "I was at the store but was unable to steal anything for my son, I hope he doesn't starve out there."
+    },
+
+    {
+      "newsTitle": "Sick of Fighting",
+      "newsText": "A strain of influenza has come over some of the soldiers at war. Their conditions are not the most ideal so they are fighting with what they can but some have not been able to avoid this sickness. Hopefully our men will pull through.",
+      "decisionFrom": "letter",
+      "gameText": "Dear Diary,\n\nI'm thinking of faking an ailment to get access to some medical supplies that my son desperately needs. Should I go to the hospital or not?",
+      "radioText": "",
+      "letterText": "Hello mom,\n\nI haven't been feeling well as of late. I've caught something from being stuck in the cold and wet trenches with my worn out boots, but I am resolved to regain my health and keep fighting for you and the rest of our countrymen. \n\nThinking of you often.\nLove, Decker",
+      "specialEventFlag": "isHelpNeighbor",
+      "yes": [
+        1,
+        1
+      ],
+      "no": [
+        0,
+        0
+      ],
+      "conditionSpecialEvent": "",
+      "conditionRadio": "",
+      "specialEventBody": "There's a note from the local hospital ",
+      "choiceA": "I went to the hospital and stole some medicine for my son, I'll sleep well knowing he'll recover faster.",
+      "choiceB": "I decided not to go to the hospital, it isn't right to take from people who may need it more."
+    },
+
+    {
+      "newsTitle": "A Great Year for Gardening",
+      "newsText": "April showers bring May flowers...and some nice produce too. Many local gardeners have boasted about their crops bring more then expected this summer. \"Yields have been more than we anticipated,\" said Mr. Fisher, one local gardener.",
+      "decisionFrom": "special",
+      "gameText": "Should I give them back or keep them?",
+      "radioText": "Police looking for possible thief",
+      "letterText": "",
+      "specialEventFlag": "isCannedFood",
+      "yes": [
+        1,
+        1
+      ],
+      "no": [
+        0,
+        0
+      ],
+      "conditionSpecialEvent": "",
+      "conditionRadio": "isCornSteal = TRUE || isNeighborSteal = TRUE",
+      "specialEventBody": "Dear Diary,\n\nWhile waiting in line at the grocery store today I noticed a pack of cigarettes left in my cart, it made think of my son who may need them since he can't buy them himself.",
+      "choiceA": "I stuffed them in my pocket and sent them to my boy, he'll be so pleased.",
+      "choiceB": "I gave them back to the cashier, she was thankful of my honesty and gave me a coupon for my next time shopping."
+    },
+
+    {
+      "newsTitle": "Battle Rages On",
+      "newsText": "AS the war continues, remember to think of our soldiers fighting for us today. Any letters of thanks would be greatly appreciated and give our sons the push to carry on the good fight.",
+      "decisionFrom": "letter",
+      "gameText": "Dear Diary,\nMy grouchy sister wrote me a letter recently about the homeless boys in her neighborhood. It made me think of my Decker and if he were homeless, would I help him. My boy needs help on the lines right now though. I may get a ride in town from my neighbors tomorrow... Should I steal from the less needy to help my boy at war?",
+      "radioText": "",
+      "letterText": "Greetings sister,\nYou should consider yourself grateful you don't have to live downtown with the urchins like I do. There are beggar children on the street, some the same age as your Decker. They have nothing to their name but the clothes on their back and boots on their feet. But if you ask me, they must have stolen those boots, they're too new to be their own.\nRegards,\nBuela",
+      "specialEventFlag": "isHelpHobo",
+      "yes": [
+        1,
+        1
+      ],
+      "no": [
+        0,
+        0
+      ],
+      "conditionSpecialEvent": "",
+      "conditionRadio": "",
+      "specialEventBody": "Raining loudly outside ",
+      "choiceA": "I stole the boots off a homeless boy to help my son, it wasn't easy but the boy had passed already so he didn't need them but my son does.",
+      "choiceB": "I couldn't go into town today, I didn't want to see my son in those poor boys' faces."
+    },
+
+    {
+      "newsTitle": "New Store Opening",
+      "newsText": "Johnson's Family Store opened this weekend with a large crowd awaiting the Grand Opening. One customer had this to say, \"It feels like I'm shopping at my neighbors, everyone is so friendly and the whole Johnson family actually works there. I love it!\"",
+      "decisionFrom": "radio",
+      "gameText": "Dear Diary,\n\nI'm trying to decide if I should go to the abbey today and claim an extra blanket for my son or let some other poor soul have them. What should I choose to do?",
+      "radioText": "Hello neighbor, it's starting to get cold out and there are people in need of warm blankets. So send your extras to the Sisterhood of Saint John or drop them off today!",
+      "letterText": "",
+      "specialEventFlag": "ishospitalSteal",
+      "yes": [
+        1,
+        1
+      ],
+      "no": [
+        0,
+        1
+      ],
+      "conditionSpecialEvent": "",
+      "conditionRadio": "",
+      "specialEventBody": "",
+      "choiceA": "I went to the abbey today and took a blanket that might have helped warm someone in need, but my son need it too.",
+      "choiceB": "I didn't get my son a blanket today, I hope he can weather the cold."
+    },
+
+    {
+      "newsTitle": "New Jobs Available as Men Leave for War",
+      "newsText": "With our men away on the front lines, women are finding their place in the workforce and raising a helping hand to aid in the war effort. Whether it's helping make clothes for our boys or ammunition for their war toys, our women are ready to help!",
+      "decisionFrom": "special",
+      "gameText": "I wasn't sure whether to tell him or to take it for my son.",
+      "radioText": "",
+      "letterText": "",
+      "specialEventFlag": "isStealBook",
+      "yes": [
+        1,
+        1
+      ],
+      "no": [
+        -1,
+        0
+      ],
+      "conditionSpecialEvent": "",
+      "conditionRadio": "",
+      "specialEventBody": "Dear Diary,\n\nI saw a man drop a book leaving the library today, he didn't seem to notice.",
+      "choiceA": "I didn't tell him, it was just the kind of book my son loves. I'm sure he will be happy!",
+      "choiceB": "I told the man he dropped his book, he was so thankful for my kindness."
+    },
+    
+    {
+      "newsTitle": "The Cost of War",
+      "newsText": "As the number of casualties rise, the worry of victory on the battlefield seems uncertain. Will we be able to win this war? Is the price of our sons' lives worth it if we lose in the end?",
+      "decisionFrom": "radio",
+      "gameText": "Dear Diary,\n\nI'm thinking of going to the peninsula to help my son, even though I don't have much experience I know I can help him.",
+      "radioText": "Help our sons at war! If you have any experience in nursing or caretaking, you may be able to help our soldiers on the front lines. Please come to the Redemption Rangers Headquarters for an interview.",
+      "letterText": "",
+      "specialEventFlag": "IsJoinWar",
+      "yes": [
+        0,
+        1
+      ],
+      "no": [
+        0,
+        1
+      ],
+      "conditionSpecialEvent": "",
+      "conditionRadio": "",
+      "specialEventBody": "",
+      "choiceA": "I'm going to do it, I need to help my son.",
+      "choiceB": "I'm going to do it, I need to help my son."
+    }
+  ]
+}

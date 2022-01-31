@@ -43,7 +43,9 @@ public class endingBranch : MonoBehaviour
 
         }
     };
-
+    private void Start() {
+        gameFlagManager = this.GetComponent<GameFlagManager>();
+    }
     private void endSum()
     {
         // Son
@@ -68,7 +70,7 @@ public class endingBranch : MonoBehaviour
         endingBranches.Add(new EndingBranch(
             "isCannedFood",
             "I fear I may not be able to last much longer given my injuries, the boots are very much appreciated.",
-            "I also recieved the boots you sent me. I fear I haven't much longer left on this earth and knowing my mother is a thief weighs on my conscience.",
+            "I also received the boots you sent me. I fear I haven't much longer left on this earth and knowing my mother is a thief weighs on my conscience.",
             true
         ));
         endingBranches.Add(new EndingBranch(
@@ -148,7 +150,6 @@ public class endingBranch : MonoBehaviour
         gameFlagManager = this.GetComponent<GameFlagManager>();
         foreach (var branch in endingBranches) {
             if (branch.isFromSon) {
-                //Debug.Log(endingBranch.evilText+endingBranch.goodText);
                 branch.setBranchBody(gameFlagManager.sonPoint > sonPointPass ? branch.goodText : branch.evilText);
                 if (gameFlagManager.hasFlag(branch.gameFlag)) {
                     sonText += branch.body;
@@ -162,8 +163,7 @@ public class endingBranch : MonoBehaviour
                     neighborText += "\n\n";
                 }
             }
-
-
+            branch.Debug();
         }
     }
     
