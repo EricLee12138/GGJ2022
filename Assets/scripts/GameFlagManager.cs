@@ -53,7 +53,7 @@ public class GameFlagManager : MonoBehaviour {
         //read and parse json data according to date(as row)
         string path;
         string jsonString;
-        path = Application.dataPath + "/scripts/gameData.json";
+        path = Application.streamingAssetsPath + "/gameData.json";
         jsonString = File.ReadAllText (path); 
         // Debug.Log("Game data path :" + path);
         DataList gameDatas = JsonUtility.FromJson<DataList> (jsonString);
