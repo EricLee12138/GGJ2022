@@ -152,14 +152,14 @@ public class endingBranch : MonoBehaviour
                 branch.setBranchBody(gameFlagManager.sonPoint > sonPointPass ? branch.goodText : branch.evilText);
                 if (gameFlagManager.hasFlag(branch.gameFlag)) {
                     sonText += branch.body;
-                    sonText += "\n";
+                    sonText += "\n\n";
                 }
             }
             else {
                 branch.setBranchBody(gameFlagManager.evilPoint > evilPointPass ? branch.evilText : branch.goodText);
                 if (!gameFlagManager.hasFlag(branch.gameFlag)) {
                     neighborText += branch.body;
-                    neighborText += "\n";
+                    neighborText += "\n\n";
                 }
             }
 
