@@ -1576,8 +1576,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 50}
   m_LocalScale: {x: 0.014112903, y: 0.014112903, z: 0.014112903}
   m_Children:
-  - {fileID: 1373922427}
   - {fileID: 1218363617}
+  - {fileID: 1643960177}
   - {fileID: 358525823}
   m_Father: {fileID: 1108576516}
   m_RootOrder: 1
@@ -2919,7 +2919,7 @@ RectTransform:
   m_Children:
   - {fileID: 867989252}
   m_Father: {fileID: 704895885}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.037}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3409,16 +3409,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1587, y: 992}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1373922426 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7248468037063312895, guid: 8454a10a7905749f4875774c0dda3a17, type: 3}
-  m_PrefabInstance: {fileID: 7248468037870477701}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1373922427 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7248468037063312894, guid: 8454a10a7905749f4875774c0dda3a17, type: 3}
-  m_PrefabInstance: {fileID: 7248468037870477701}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1379030615
 GameObject:
   m_ObjectHideFlags: 0
@@ -3760,7 +3750,7 @@ MonoBehaviour:
   EndingComment: {fileID: 1108386}
   EndingLetterText: {fileID: 331634180}
   EndingCommentText: {fileID: 1318118137}
-  Credits: {fileID: 1373922426}
+  Credits: {fileID: 1643960176}
   coin: {fileID: 1680175692}
   DayPassed: -1
   EvilPoint: 0
@@ -4388,6 +4378,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593300468}
   m_CullTransparentMesh: 1
+--- !u!1 &1643960176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3233130356673962509, guid: 8454a10a7905749f4875774c0dda3a17, type: 3}
+  m_PrefabInstance: {fileID: 7248468037870477701}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1643960177 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3233130356673962508, guid: 8454a10a7905749f4875774c0dda3a17, type: 3}
+  m_PrefabInstance: {fileID: 7248468037870477701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1666810665
 PrefabInstance:
   m_ObjectHideFlags: 0
