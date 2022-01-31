@@ -64,6 +64,8 @@ public class StoryManager : MonoBehaviour
     TMP_Text EndingLetterText;
     [SerializeField]
     TMP_Text EndingCommentText;
+    [SerializeField]
+    GameObject Credits;
 
     [SerializeField]
     throwCoin coin;
@@ -87,7 +89,7 @@ public class StoryManager : MonoBehaviour
     public string RadioText = "It is announced that";
     public string LetterText = "Dear mom";
     public string EventText = "Today I met...";
-
+    
     public string NewsText = "Today I met...";
     public string NewsTitle = "Today I met...";
 
@@ -159,6 +161,7 @@ public class StoryManager : MonoBehaviour
         EndingEnvelopeOpen.GetComponent<Animator>().SetTrigger("FadeIn");
         EndingLetter.GetComponent<Animator>().SetTrigger("FadeIn");
         EndingComment.GetComponent<Animator>().SetTrigger("FadeIn");
+        Credits.GetComponent<Animator>().SetTrigger("FadeIn");
         EndingLetterText.GetComponent<Animator>().SetTrigger("FadeIn");
         EndingCommentText.GetComponent<Animator>().SetTrigger("FadeIn");
 
