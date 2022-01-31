@@ -6,16 +6,18 @@ using UnityEngine;
 public class endingBranch : MonoBehaviour
 {
     [Range(0,10)]
-    public int sonPointPass;//if greater than sonPointPass you are good mom
+    public int sonPointPass = 5;//if greater than sonPointPass you are good mom
     [Range(0,10)]
-    public int evilPointPass;//if greater than evilPointPass you are a$$hole
+    public int evilPointPass = 5;//if greater than evilPointPass you are a$$hole
     
     public GameFlagManager gameFlagManager;
     public string sonText;
     public string neighborText;
-    struct EndingBranch {
+    public List<EndingBranch> endingBranches;
+
+    public struct EndingBranch {
         public string gameFlag;
-        public string branchBody;
+        public string body;
         public bool isFromSon;
         public string evilText;
         public string goodText;
@@ -24,18 +26,30 @@ public class endingBranch : MonoBehaviour
             this.gameFlag = gameFlag;
             this.goodText = goodText;
             this.evilText = evilText;
-            branchBody = "";
+            body = "";
             this.isFromSon = isFromSon;
         }
 
         public void setBranchBody(string text)
         {
-            this.branchBody = text;
+            this.body = text;
+        }
+
+        public void Debug()
+        {
+            print("body"+this.body);
+            print("good text"+this.goodText);
+            print("evil text"+this.evilText);
+
         }
     };
 
-    private List<EndingBranch> endingBranches = new List<EndingBranch>();
-    private void Start() {
+    private void Start()
+    {
+       endingBranches = new List<EndingBranch>();
+    }
+
+    private void endSum() {
         // Son
         endingBranches.Add(new EndingBranch(
             "isCornSteal",
@@ -136,22 +150,25 @@ public class endingBranch : MonoBehaviour
             false
         ));
         gameFlagManager = this.GetComponent<GameFlagManager>();
-        foreach (EndingBranch endingBranch in endingBranches) {
-            if (endingBranch.isFromSon) {            
-                endingBranch.setBranchBody(gameFlagManager.sonPoint > sonPointPass ? endingBranch.goodText : endingBranch.evilText);
+        foreach (var branch in endingBranches) {
+            if (branch.isFromSon) {
+                //Debug.Log(endingBranch.evilText+endingBranch.goodText);
+                branch.setBranchBody(gameFlagManager.sonPoint > sonPointPass ? branch.goodText : branch.evilText);
             }
             else {
-                endingBranch.setBranchBody(gameFlagManager.evilPoint > evilPointPass ? endingBranch.evilText : endingBranch.goodText);
+                branch.setBranchBody(gameFlagManager.evilPoint > evilPointPass ? branch.evilText : branch.goodText);
             }
         }
     }
-
+    
     public string getSonText() {
+        endSum();
         string _sonText = "";
         foreach (var branch in endingBranches) {
+            branch.Debug();
             if (branch.isFromSon == true) {
                 if (gameFlagManager.hasFlag(branch.gameFlag)) {
-                    _sonText += branch.branchBody;
+                    _sonText += branch.body;
                     _sonText += "\n";
                 }
             }
@@ -161,13 +178,12 @@ public class endingBranch : MonoBehaviour
         return _sonText;
     }
 
-    public string getNeighborText()
-    {        
+    public string getNeighborText() {        
         string _neighborText = "";
         foreach (var branch in endingBranches) {
             if (branch.isFromSon == false) {
-                if (gameFlagManager.hasFlag(branch.gameFlag)) {
-                    _neighborText += branch.branchBody;
+                if (!gameFlagManager.hasFlag(branch.gameFlag)) {
+                    _neighborText += branch.body;
                     _neighborText += "\n";
                 }
             }

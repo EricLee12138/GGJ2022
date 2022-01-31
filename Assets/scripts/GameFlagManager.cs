@@ -79,22 +79,11 @@ public class GameFlagManager : MonoBehaviour {
                     this.specialEventFlag = "";
                     this.specialEventBody = "";
                 }
-
             }
         }
-        else if (current.specialEventBody != "") {
-            if (current.specialEventFlag != "") {
-                this.specialEventFlag = current.specialEventFlag;
-                this.specialEventBody = current.specialEventBody;
-            }
-            else {
-                this.specialEventFlag = "";
-                this.specialEventBody = "";
-            }
-        }
-        else {
-            this.specialEventFlag = "";
-            this.specialEventBody = "";
+        else{
+            this.specialEventFlag = current.specialEventFlag;
+            this.specialEventBody = current.specialEventBody;
         }
 
         if (current.conditionRadio != "") {
@@ -105,11 +94,8 @@ public class GameFlagManager : MonoBehaviour {
                 this.radioText = "";
             }
         }
-        else if (current.radioText != "") {
-            this.radioText = current.radioText;
-        }
         else {
-            this.radioText = "";
+            this.radioText = current.radioText;
         }
 
         this.debug();
@@ -117,10 +103,10 @@ public class GameFlagManager : MonoBehaviour {
     public void makeDecision(bool decision){
         ///Input: current date
         ///Edit evilPoint & sonPoint base on decision, add gameFlag if applicable
-        this.evilPoint = this.evilPoint + (this.decision ? this.yes[0] : this.no[0]);
-        this.sonPoint = this.sonPoint + (this.decision ? this.yes[1] : this.no[1]);
-        if (this.decision) {
-            if(specialEventFlag!=null){
+        this.evilPoint = this.evilPoint + (decision ? this.yes[0] : this.no[0]);
+        this.sonPoint = this.sonPoint + (decision ? this.yes[1] : this.no[1]);
+        if (decision) {
+            if(this.specialEventFlag!=null){
                 this.gameFlags.Add(this.specialEventFlag);
             }
         }
