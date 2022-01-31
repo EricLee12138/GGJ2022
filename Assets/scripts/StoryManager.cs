@@ -113,11 +113,11 @@ public class StoryManager : MonoBehaviour
 
     public void EndToday()
     {
-        // if (!SpecialEventHappened || !SpecialEventDone) // Special event not done, can't end today
-        // {
-        //     DeclineEndToday();
-        //     return;
-        // }
+        if (!SpecialEventHappened || !SpecialEventDone) // Special event not done, can't end today
+        {
+            DeclineEndToday();
+            return;
+        }
 
         // End today
         cameraMovement.DisableMovement();
@@ -169,7 +169,7 @@ public class StoryManager : MonoBehaviour
 
     public void StartToday()
     {
-        if (DayPassed == 1)
+        if (DayPassed == 7)
         {
             print("end");
             // Ending
